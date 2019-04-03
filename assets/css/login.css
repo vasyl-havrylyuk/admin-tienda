@@ -1,0 +1,21 @@
+body {
+    background: rgb(216, 216, 216);
+}
+
+form {
+    width: 320px;
+    padding: 20px;
+    position: absolute;
+    background: rgb(255, 255, 255);
+    top: 20%;
+    left: 50%;
+    -ms-transform: translate(-50%, -20%);
+    transform: translate(-50%, -20%);
+    font-size: 1.2rem;
+}
+
+
+form .alert-danger.error {
+    font-size: 1rem;
+}
+
