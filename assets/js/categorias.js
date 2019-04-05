@@ -14,5 +14,7 @@ function eliminar(id) {
 
     if (eliminar) {
         location.href = "categorias/eliminar/"+id;
+    } else {
+        location.reload(); 
     }
 }

@@ -58,14 +58,34 @@ class BackModel extends CI_Model {
 
     public function getDetallesArticulo($id) {
         $id = sanear($id);
-        $sql = "SELECT A.k as k, A.iStock as iStock, A.sNombre as sNombre, T.sNombre as categoria, M.sNombre as marca, A.sDescripcion as sDescripcion, A.dPrecio as dPrecio FROM eArticulo AS A, eTipo as T, eMarca as M WHERE A.k = ? AND A.xTipo_k = T.k AND A.xMarca_k = M.k";
+        $sql = "SELECT A.k as k, A.iStock as iStock, A.sNombre as sNombre, T.sNombre as categoria, M.sNombre as marca, A.sDescripcion as sDescripcion, A.dPrecio as dPrecio, A.sImagen as sImagen FROM eArticulo AS A, eTipo as T, eMarca as M WHERE A.k = ? AND A.xTipo_k = T.k AND A.xMarca_k = M.k";
         $query = $this->con->query($sql, array($id));
         $rs = $query->result_array();
         
         return $rs;
     }
 
+    public function insertarArticulo($dataPOST, $dataFILES) {
+        $imagen = $dataFILES['imagen'];        
+        $nombreImagen = time().'-'.$imagen['name'];
+        move_uploaded_file($imagen['tmp_name'], "../assets/img/".$nombreImagen);
+
+        $data = array(
+            'sNombre'       => sanear($dataPOST['nombre']),
+            'sDescripcion'  => sanear($dataPOST['descripcion']),
+            'iStock'        => sanear($dataPOST['stock']),
+            'xTipo_k'       => sanear($dataPOST['categoria']),
+            'xMarca_k'      => sanear($dataPOST['marca']),
+            'dPrecio'       => sanear($dataPOST['precio']),
+            'sImagen'       => $nombreImagen
+        );
+
+        $this->con->set($data);
+        $this->con->insert('eArticulo');
+    }
+
     public function actualizarArticulo($datos) {
+        // actualizamos los datos principales
         $data = array(
             'sNombre'       => sanear($datos['nombre']), 
             'sDescripcion'  => sanear($datos['descripcion']), 
@@ -75,8 +95,29 @@ class BackModel extends CI_Model {
             'dPrecio'       => sanear($datos['precio'])
         );
         $this->con->update('eArticulo', $data, array('k' => sanear($datos['id'])));
-    }
+        
 
+        // actualizamos la imagen
+        if (isset($datos['imagen']) && !empty($datos['imagen']['name'])) {
+            
+            // Borramos la imagen anterior
+            $sql = "SELECT sImagen FROM eArticulo WHERE k = ?";
+            $query = $this->con->query($sql, array($datos['id']));
+            $fichero = $query->row('sImagen');
+            unlink("../assets/img/".$fichero) or die('No se ha podido eliminar la imagen anterior');
+
+            // Subimos la nueva imagen
+            $imagen = $datos['imagen'];        
+            $nombreImagen = time().'-'.sanear($imagen['name']);
+            move_uploaded_file($imagen['tmp_name'], "../assets/img/".$nombreImagen);
+
+            // ACtualizamos el registro
+            $data = array(
+                'sImagen' => $nombreImagen
+            );
+            $this->con->update('eArticulo', $data, array('k' => sanear($datos['id'])));
+        }
+    }
 
     public function eliminarArticulo($id) {
         $this->con->delete('eArticulo', array('k' => sanear($id)));

@@ -47,5 +47,7 @@ function eliminar(id) {
 
     if (eliminar) {
         location.href = "usuarios/eliminar/"+id;
+    } else {
+        location.reload(); 
     }
 }

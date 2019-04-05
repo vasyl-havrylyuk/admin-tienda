@@ -15,5 +15,7 @@ function eliminar(id) {
 
     if (eliminar) {
         location.href = "marcas/eliminar/"+id;
+    } else {
+        location.reload(); 
     }
 }

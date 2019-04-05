@@ -4,7 +4,7 @@
 
 
 
-<form action="<?php echo base_url().'articulos/actualizar/'.$detalles['k']; ?>" method="post">
+<form class="edicion" action="<?php echo base_url().'articulos/actualizar/'.$detalles['k']; ?>" method="post" enctype="multipart/form-data">
     <div class="form-group row">
         <label for="id" class="col-sm-2 col-form-label">ID</label>
         
@@ -13,6 +13,20 @@
         </div>
     </div>
 
+
+    <div class="form-group row">
+        <label for="imagen" class="col-sm-10 offset-2">
+            <img id="imagenSrc" src="../../../assets/img/<?php echo $detalles['sImagen']; ?>">
+        </label>
+    </div>
+
+    <div class="form-group row">
+
+        <div class="col-sm-10 offset-2 mb-4">
+            <i>(Subir imagen con ratio 1:1, ej:. 250x250)</i>
+            <input type="file" name="imagen" class="form-control" id="imagen" onchange="leerRuta(this)">
+        </div>
+    </div>
 
     <div class="form-group row">
         <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>

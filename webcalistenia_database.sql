@@ -118,8 +118,7 @@ INSERT INTO `etipo` (`k`, `sNombre`) VALUES
 (4, 'Barra de dominadas'),
 (5, 'Rueda abdominal'),
 (6, 'Suplementos'),
-(7, 'Suplementos'),
-(8, 'Bandas elásticas');
+(7, 'Bandas elásticas');
 
 -- --------------------------------------------------------
 

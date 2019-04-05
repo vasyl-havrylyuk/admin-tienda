@@ -1,0 +1,13 @@
+form div.row img {
+    width: 250px !important;
+    cursor: pointer;
+}
+
+form.registro div.row img {
+    opacity: .5;
+}
+
+form div.row img:hover {
+    opacity: 1;
+    transition: .3s;
+}

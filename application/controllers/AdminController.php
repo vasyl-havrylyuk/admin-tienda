@@ -13,7 +13,7 @@ class AdminController extends CI_Controller {
 
 
 
-    public function view_graficos() {
+    public function home() {
         $vista = array(
             'vista'     => 'admin/view_home',
             'params'    =>  array(),
@@ -31,7 +31,7 @@ class AdminController extends CI_Controller {
 
 
 
-    public function view_login() {
+    public function login() {
         $data = array();
 
         if ($this->uri->segment(2) ==! null && $this->uri->segment(2) == 'error')  {
@@ -87,7 +87,7 @@ class AdminController extends CI_Controller {
     
 
     // MOSTRAMOS TODOS LOS ARTICULOS
-    public function view_articulos() {
+    public function articulos() {
         $data = array(
             'articulos' => $this->BackModel->getArticulos()
         );
@@ -106,16 +106,27 @@ class AdminController extends CI_Controller {
 
     // CREAMOS NUUEVO ARTICULO
     public function nuevoArticulo() {
+        $data = array(
+            'categorias' => $this->BackModel->getCategorias(),
+            'marcas' => $this->BackModel->getMarcas()
+        );
+
         $vista = array(
             'vista'     => 'admin/view_nuevoArticulo',
-            'params'    =>  array(),
+            'params'    =>  $data,
             'layout'    => 'ly_admin',
             'titulo'    => 'Nuevo artículo',
-            'style'     => '',
-            'js'        => ''
+            'style'     => 'articulos',
+            'js'        => 'articulos'
         );
 
         $this->layouts->view($vista);
+    }
+
+    public function insertarArticulo() {
+        $this->BackModel->insertarArticulo($_POST, $_FILES);
+        
+        header('Location: '.base_url().'articulos');
     }
 
     // EDITAMOS EL ARTICULO
@@ -133,7 +144,7 @@ class AdminController extends CI_Controller {
             'params'    =>  $data,
             'layout'    => 'ly_admin',
             'titulo'    => 'Edición de artículo',
-            'style'     => '',
+            'style'     => 'articulos',
             'js'        => 'articulos'
         );
 
@@ -142,6 +153,10 @@ class AdminController extends CI_Controller {
 
     // ACTUALIZAMOS EL ARTICULO
     public function actualizarArticulo() {
+        if (!empty($_FILES['imagen']['name'])) {
+            $_POST['imagen'] = $_FILES['imagen'];
+        }
+
         $this->BackModel->actualizarArticulo($_POST);
         
         header('Location: '.base_url().'articulos');
@@ -165,7 +180,7 @@ class AdminController extends CI_Controller {
 
 
     // MOSTRAMOS TODAS LAS CATEGORIAS
-    public function view_categorias() {
+    public function categorias() {
         $data = array(
             'categorias' => $this->BackModel->getCategorias()
         );
@@ -239,7 +254,7 @@ class AdminController extends CI_Controller {
 
 
     // MOSTRAMOS TODAS LAS MARCAS
-    public function view_marcas() {
+    public function marcas() {
         $data = array(
             'marcas' => $this->BackModel->getMarcas()
         );
@@ -312,7 +327,7 @@ class AdminController extends CI_Controller {
 
 
     // MOSTRAMOS TODOS LOS USUARIOS
-    public function view_usuarios() {
+    public function usuarios() {
         $data = array(
             'usuarios'  => $this->BackModel->getUsuarios()
         );
