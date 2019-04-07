@@ -13,6 +13,13 @@
         </div>
     </div>
 
+    <div class="form-group row">
+        <label for="usuario" class="col-sm-2 col-form-label">Usuario</label>
+        
+        <div class="col-sm-3">
+            <input type="text" value="<?php echo $detalles['sUser']; ?>" name="usuario" class="form-control" id="usuario">
+        </div>
+    </div>
 
     <div class="form-group row">
         <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>

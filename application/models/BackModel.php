@@ -148,6 +148,14 @@ class BackModel extends CI_Model {
         return $rs;
     }
 
+    public function insertarCategoria($dataPOST) {
+        $data = array(
+            'sNombre'       => sanear($dataPOST['nombre'])
+        );
+        $this->con->set($data);
+        $this->con->insert('eTipo');
+    }
+
     public function actualizarCategoria($datos) {
         $data = array(
             'sNombre' => sanear($datos['nombre'])
@@ -182,6 +190,14 @@ class BackModel extends CI_Model {
         return $rs;
     }
     
+    public function insertarMarca($dataPOST) {
+        $data = array(
+            'sNombre'       => sanear($dataPOST['nombre'])
+        );
+        $this->con->set($data);
+        $this->con->insert('eMarca');
+    }
+
     public function actualizarMarca($datos) {
         $data = array(
             'sNombre' => sanear($datos['nombre'])
@@ -217,8 +233,25 @@ class BackModel extends CI_Model {
         return $rs;
     }
 
+    public function insertarUsuario($dataPOST) {
+        $data = array(
+            'sUser'             => sanear($dataPOST['usuario']),
+            'sNombre'           => sanear($dataPOST['nombre']),
+            'sApellido'         => sanear($dataPOST['apellido']),
+            'sDireccion'        => sanear($dataPOST['direccion']),
+            'sDni'              => sanear($dataPOST['dni']),
+            'sEmail'            => sanear($dataPOST['email']),
+            'dFechaRegistro'    => date('Y-m-d'),
+            'sPassword'         => hash('sha512', sanear($dataPOST['password'])),
+            'bAdministrador'    => sanear($dataPOST['rol'])
+        );
+        $this->con->set($data);
+        $this->con->insert('eUsuario');
+    }
+
     public function actualizarUsuario($datos) {
         $data = array(
+            'sUser'             => sanear($datos['usuario']),
             'sNombre'           => sanear($datos['nombre']),
             'sApellido'         => sanear($datos['apellido']),
             'sDni'              => sanear($datos['dni']),

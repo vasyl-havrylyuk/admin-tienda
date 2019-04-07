@@ -3,5 +3,19 @@
 ?>
 
 
+<form action="<?php echo base_url().'categorias/insertar'; ?>" method="post">
+    <div class="form-group row">
+        <label for="nombre" class="col-sm-2 col-form-label">Nombre de categoria</label>
+        
+        <div class="col-sm-5">
+            <input type="text" name="nombre" class="form-control" id="nombre">
+        </div>
+    </div>
 
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus reprehenderit delectus laudantium, a beatae magnam facilis, impedit ea alias vel eum earum inventore blanditiis sunt quod recusandae! Ipsum, corrupti veritatis dignissimos tempore illum ab nostrum fugiat ratione magni. Perferendis, consequuntur.</p>
+    <div class="form-group row">
+        <div class="col-sm-10 offset-sm-2">
+            <button type="submit" class="btn btn-outline-primary">Crear</button>
+        </div>
+    </div>
+
+</form>

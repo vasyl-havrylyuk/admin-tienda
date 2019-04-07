@@ -205,10 +205,17 @@ class AdminController extends CI_Controller {
             'layout'    => 'ly_admin',
             'titulo'    => 'Nueva categoria',
             'style'     => '',
-            'js'        => ''
+            'js'        => 'categorias'
         );
 
         $this->layouts->view($vista);
+    }
+
+    // INSERTAMOS CATEGORIA
+    public function insertarCategoria() {
+        $this->BackModel->insertarCategoria($_POST);
+
+        header('Location: '.base_url().'categorias');
     }
 
     // EDITAMOS CATEGORIA
@@ -279,10 +286,17 @@ class AdminController extends CI_Controller {
             'layout'    => 'ly_admin',
             'titulo'    => 'Nueva marca',
             'style'     => '',
-            'js'        => ''
+            'js'        => 'marcas'
         );
 
         $this->layouts->view($vista);
+    }
+
+    // INSERTAMOS MARCA
+    public function insertarMarca() {
+        $this->BackModel->insertarMarca($_POST);
+
+        header('Location: '.base_url().'marcas');
     }
 
     // EDITAMOS MARCA
@@ -352,10 +366,17 @@ class AdminController extends CI_Controller {
             'layout'    => 'ly_admin',
             'titulo'    => 'Nuevo usuario',
             'style'     => '',
-            'js'        => ''
+            'js'        => 'usuarios'
         );
 
         $this->layouts->view($vista);
+    }
+
+    // INSERTAMOS USUARIO
+    public function insertarUsuario() {
+        $this->BackModel->insertarUsuario($_POST);
+
+        //header('Location: '.base_url().'usuarios');
     }
 
     // EDITAMOS USUARIO

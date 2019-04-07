@@ -1,4 +1,4 @@
-// VALIDAMOS EL FORMULARIO DE EDICIÓN DE CATEGORIA
+// VALIDAMOS EL FORMULARIO DE EDICIÓN Y CREACIÓN DE CATEGORIA
 $('form').submit(function(event){
     $nombre = $('#nombre');
     

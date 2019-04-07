@@ -1,14 +1,21 @@
 
-// VALIDAMOS EL FORMULARIO DE EDICIÓN DE USUARIO
+// VALIDAMOS EL FORMULARIO DE EDICIÓN Y CREACIÓN DE USUARIO
 $('form').submit(function(event){
+    $usuario = $('#usuario');
     $nombre = $('#nombre');
     $apellido = $('#apellido');
     $dni = $('#dni');
     $direccion = $('#direccion');
     $email = $('#email');
     $registro = $('#registro');
+    $password = $('#password');
     $rol = $('#rol');
     
+    if ($usuario.val() == "") {
+        $usuario.addClass('is-invalid');
+        event.preventDefault();
+    }
+
     if ($nombre.val() == "") {
         $nombre.addClass('is-invalid');
         event.preventDefault();
@@ -38,6 +45,13 @@ $('form').submit(function(event){
         $registro.addClass('is-invalid');
         event.preventDefault();
     }
+
+    if ($password.val() == "") {
+        $password.addClass('is-invalid');
+        event.preventDefault();
+    }
+
+    
 });
 
 

@@ -32,6 +32,7 @@ $route['articulos/eliminar/(:num)'] = 'AdminController/eliminarArticulo';
 // CATEGORIAS
 $route['categorias'] = 'AdminController/categorias';
 $route['categorias/nuevo'] = 'AdminController/nuevoCategoria';
+$route['categorias/insertar'] = 'AdminController/insertarCategoria';
 $route['categorias/editar/(:num)'] = 'AdminController/editarCategoria';
 $route['categorias/actualizar/(:num)'] = 'AdminController/actualizarCategoria';
 $route['categorias/eliminar/(:num)'] = 'AdminController/eliminarCategoria';
@@ -41,6 +42,7 @@ $route['categorias/eliminar/(:num)'] = 'AdminController/eliminarCategoria';
 // MARCAS
 $route['marcas'] = 'AdminController/marcas';
 $route['marcas/nuevo'] = 'AdminController/nuevoMarca';
+$route['marcas/insertar'] = 'AdminController/insertarMarca';
 $route['marcas/editar/(:num)'] = 'AdminController/editarMarca';
 $route['marcas/actualizar/(:num)'] = 'AdminController/actualizarMarca';
 $route['marcas/eliminar/(:num)'] = 'AdminController/eliminarMarca';
@@ -50,6 +52,7 @@ $route['marcas/eliminar/(:num)'] = 'AdminController/eliminarMarca';
 // USUARIOS
 $route['usuarios'] = 'AdminController/usuarios';
 $route['usuarios/nuevo'] = 'AdminController/nuevoUsuario';
+$route['usuarios/insertar'] = 'AdminController/insertarUsuario';
 $route['usuarios/editar/(:num)'] = 'AdminController/editarUsuario';
 $route['usuarios/actualizar/(:num)'] = 'AdminController/actualizarUsuario';
 $route['usuarios/eliminar/(:num)'] = 'AdminController/eliminarUsuario';
