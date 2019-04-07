@@ -84,29 +84,37 @@ class FrontalModel extends CI_Model {
         $usuario = sanear($data['usuario']);
         $password = hash('sha512', sanear($data['password']));
 
-        $sql = "SELECT U.k as k, U.sNombre as nombre, U.sDireccion as direccion, U.bAdministrador as bAdmin
+        $sql = "SELECT U.k as k, U.sNombre as nombre, U.sDireccion as direccion, U.bAdministrador as bAdmin, U.bStatus as bStatus
                 FROM eUsuario as U WHERE sUser = '$usuario' AND sPassword = '$password'";
         
         $query = $this->con->query($sql);
         $rs = $query->row('k');
+        $usuario = $query->result_array();
         $existe = $query->num_rows();
 
+        $resultado = array();
 
         if ($existe) {
-            $usuario = $query->result_array();
+            $resultado['autenticado'] = true;
 
-            $_SESSION['autenticado'] = true;
+            // En caso de que exista en la database creamos una sesion con la id de ese usuario
             $_SESSION['id'] = $usuario[0]['k'];
 
-            if ($usuario[0]['bAdmin'] == 1) {
+            // Comprobamos si es administrador
+            if ($usuario[0]['bAdmin'] == 1) { 
+                $resultado['adminAutenticado'] = true;
                 $_SESSION['adminAutenticado'] = true;
-                return(["autenticado" => true, "adminAutenticado" => true]);
-            } else {
-                return(["autenticado" => true]);
             }
-        } else {
-            return(["autenticado" => false]);
+            
+            // Comprobamos si el usuario tiene activada su cuenta
+            if ($usuario[0]['bStatus'] == 1) {
+                $resultado['usuarioActivado'] = true;
+                $_SESSION['autenticado'] = true;
+            }
+
         }
+
+        return $resultado;
 
     }
 
