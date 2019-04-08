@@ -163,14 +163,6 @@ class FrontalModel extends CI_Model {
 
         $resultado = ["registrado" => true];
 
-        // EXTRAEMOS EL REGISTRO DEL ULTIMO USUARIO PARA GUARDARLO EN LA SESION
-        $sql = "SELECT U.k as k, U.bAdministrador as bAdmin FROM eUsuario as U ORDER BY k DESC LIMIT 1";
-        $query = $this->con->query($sql);
-        $ultimoUsuario = $query->row('k');
-
-        $_SESSION['autenticado'] = true;
-        $_SESSION['id'] = $ultimoUsuario;
-
         return $resultado;
     }
 
