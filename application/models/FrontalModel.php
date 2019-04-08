@@ -6,6 +6,8 @@ class FrontalModel extends CI_Model {
 
     public function __construct() {
         parent::__construct();
+        
+        $this->load->library('email');
 
         try {
             $this->con = $this->load->database('default', true);
@@ -161,7 +163,16 @@ class FrontalModel extends CI_Model {
             $resultado = ["registrado" => false]
         );
 
+        
         $resultado = ["registrado" => true];
+
+        // Le enviamos un email al usuario registrado
+        $this->email->initialize(array('mailtype' => 'html'));
+        $this->email->from('webcalistenia@gmail.com', 'WebCalistenia');
+        $this->email->to('0xefro@gmail.com');
+        $this->email->subject('Activación de cuenta');
+        $this->email->message(hash('sha512', 'Hola Mundo'));
+        $this->email->send();
 
         return $resultado;
     }

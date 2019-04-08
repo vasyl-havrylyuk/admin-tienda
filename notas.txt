@@ -1,0 +1,6 @@
+PARA CUANDO SE HAGA EL DESPLIEGUE
+- Asignar el chown -R de www-data:www-data a esta carpeta de assets
+- Modificar el usuario y pass para la conexion a mysql
+- Modificar el base_url() en codeigniter
+- Configurar el htaccess de angular
+- Configurar el sendmail en el backend

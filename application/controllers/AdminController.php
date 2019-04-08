@@ -14,13 +14,6 @@ class AdminController extends CI_Controller {
 
 
     public function home() {
-        $this->load->library('email');
-        $this->email->from('webcalistenia@gmail.com', 'WebCalistenia Contact');
-        $this->email->to('0xefro@gmail.com');
-        $this->email->subject('ASUNTO w1');
-        $this->email->message('Mensaje w1');
-        $this->email->send();
-
 
         $vista = array(
             'vista'     => 'admin/view_home',
