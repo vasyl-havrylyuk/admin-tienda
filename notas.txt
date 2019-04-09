@@ -1,6 +1,19 @@
 PARA CUANDO SE HAGA EL DESPLIEGUE
-- Asignar el chown -R de www-data:www-data a esta carpeta de assets
-- Modificar el usuario y pass para la conexion a mysql
+- Dar permisos a la carpeta assets de angular con chown -R www-data:www-data
+- Modificar la conexion mysql en codeigniter
 - Modificar el base_url() en codeigniter
-- Configurar el htaccess de angular
-- Configurar el sendmail en el backend
+
+- Configurar el MTA en Linux: instalar sSMTFP y editar /etc/ssmtp/ssmtp.conf
+    root=webcalistenia@gmail.com
+    UseTLS=YES
+    UseSTARTTLS=YES
+    AuthMethod=LOGIN
+    mailhub=smtp.gmail.com:587
+    AuthUser=webcalistenia@gmail.com
+    AuthPass=*****
+    hostname=vasylhavrylyuk
+    FromLineOverride=YES
+
+- Configurar el php.ini para el email   
+    sendmail_path = /usr/sbin/ssmtp -t
+

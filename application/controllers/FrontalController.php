@@ -7,8 +7,6 @@ class FrontalController extends CI_Controller {
         parent::__construct();
 
         $_POST = json_decode(file_get_contents('php://input'), true);
-
-        $this->load->model('FrontalModel');
     }
 
     public function getArticulos() {

@@ -72,3 +72,9 @@ $route['comprobarLogin'] = 'FrontalController/comprobarLogin';
 $route['cerrarsesion'] = 'FrontalController/cerrarsesion';
 $route['registro'] = 'FrontalController/registro';
 $route['compra'] = 'FrontalController/compra';
+
+
+
+
+// RUTA A LA VA A ACCEDER EL USUARIO PARA ACTIVAR SU CUENTA
+$route['activate/(:num)/(:any)'] = 'ActivateController';

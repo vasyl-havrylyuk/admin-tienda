@@ -6,14 +6,13 @@ class FrontalModel extends CI_Model {
 
     public function __construct() {
         parent::__construct();
-        
-        $this->load->library('email');
 
         try {
             $this->con = $this->load->database('default', true);
         } catch(PDOException $e) {
             die($e->getMessage());
         }
+
     }
 
 
@@ -163,16 +162,33 @@ class FrontalModel extends CI_Model {
             $resultado = ["registrado" => false]
         );
 
-        
         $resultado = ["registrado" => true];
 
-        // Le enviamos un email al usuario registrado
+
+
+
+        // Extraemos el id y la clave hasheada para formar el link de activacion de cuenta
+        $sql = "SELECT * FROM eUsuario ORDER BY k DESC LIMIT 1";
+        $query = $this->con->query($sql);
+        $id = $query->row('k');
+        $hashed_pass = $query->row('sPassword');
+
+        // Formamos el link
+        $link = base_url().'activate/'.$id.'/'.md5($id.$hashed_pass);
+
+        // Le enviamos un email de activación de cuenta al usuario registrado
         $this->email->initialize(array('mailtype' => 'html'));
         $this->email->from('webcalistenia@gmail.com', 'WebCalistenia');
-        $this->email->to('0xefro@gmail.com');
+        $this->email->to($email);
         $this->email->subject('Activación de cuenta');
-        $this->email->message(hash('sha512', 'Hola Mundo'));
-        $this->email->send();
+        $this->email->message('<a href="'.$link.'">'.$link.'</a>');
+        if ($this->email->send()) {
+            $resultado = ["registrado" => true];
+        } else {
+            $resultado = ["registrado" => false];
+        }
+
+
 
         return $resultado;
     }

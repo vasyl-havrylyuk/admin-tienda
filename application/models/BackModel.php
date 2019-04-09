@@ -30,6 +30,7 @@ class BackModel extends CI_Model {
 		} else {
 			return array('autenticado' => false);
         }
+
     }
 
 
@@ -266,6 +267,32 @@ class BackModel extends CI_Model {
 
     public function eliminarUsuario($id) {
         $this->con->delete('eUsuario', array('k' => sanear($id)));
+    }
+
+
+
+
+
+
+
+    public function activarCuenta($idURL, $codigoURL) {
+        $idURL = sanear($idURL);
+        $codigoURL = sanear($codigoURL);
+
+        $sql = "SELECT * FROM eUsuario WHERE k = ?";
+        $query = $this->con->query($sql, array($idURL));
+        
+        $idUser = $query->row('k');
+        $hashed_pass = $query->row('sPassword');
+
+        if ($codigoURL == md5($idUser.$hashed_pass)) {
+            $data = array('bStatus' => 1);
+            $this->con->update('eUsuario', $data, array('k' => $idUser));
+        } else {
+            return false;
+        }
+
+        return true;
     }
     
 }

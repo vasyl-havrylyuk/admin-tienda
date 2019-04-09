@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+define('WEBSITE','http://localhost:4200');
+
 /*
 |--------------------------------------------------------------------------
 | Display Debug backtrace
