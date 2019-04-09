@@ -1,4 +1,5 @@
 PARA CUANDO SE HAGA EL DESPLIEGUE
+- Configurar los directory para reescribir con el htaccess
 - Dar permisos a la carpeta assets de angular con chown -R www-data:www-data
 - Modificar la conexion mysql en codeigniter
 - Modificar el base_url() en codeigniter

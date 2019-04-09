@@ -13,7 +13,7 @@ class ActivateController extends CI_Controller {
 
         $this->BackModel->activarCuenta($idURL, $codigoURL);
 
-        header('Location: '.WEBSITE.'/login/cuenta');
+        header('Location: /login/cuenta');
     }
 
 }
