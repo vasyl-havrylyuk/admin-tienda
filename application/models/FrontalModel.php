@@ -193,7 +193,13 @@ class FrontalModel extends CI_Model {
     }
 
 
+    public function getDetallesUsuario() {
+        $id = $_SESSION['id'];
+        $sql = "SELECT * FROM eUsuario WHERE k = ?";
+        $query = $this->con->query($sql, array($id));
 
+        return $query->row(0);
+    }
 
 
     public function compra($data) {

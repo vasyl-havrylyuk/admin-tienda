@@ -37,6 +37,10 @@ class FrontalController extends CI_Controller {
         echo json_encode($this->FrontalModel->registrarUsuario($_POST['formulario']));
     }
 
+    public function getDetallesUsuario() {
+        echo json_encode($this->FrontalModel->getDetallesUsuario());
+    }
+
     public function cerrarsesion() {
         session_unset();
         if (isset($_COOKIE[session_name()])) setcookie(session_name(), "", time(), "/");
