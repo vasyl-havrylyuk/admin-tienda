@@ -188,8 +188,7 @@ class FrontalModel extends CI_Model {
             $resultado = ["registrado" => false];
         }
 
-
-
+        
         return $resultado;
     }
 
