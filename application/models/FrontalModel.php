@@ -259,4 +259,25 @@ class FrontalModel extends CI_Model {
         return(array("correcto" => true, "user" => $id_user, "direccion" => $direccion, "fecha" => $fecha));
     }
 
+
+
+
+
+    
+    public function actualizarCuenta($data) {
+        $data = array(
+            'sUser'      => sanear($data['usuario']),
+            'sNombre'    => sanear($data['nombre']),
+            'sApellido'  => sanear($data['apellido']),
+            'sDni'       => sanear($data['dni']),
+            'sDireccion' => sanear($data['direccion']),
+            'sEmail'     => sanear($data['email']),
+        );
+
+        $actualizada = $this->con->update('eUsuario', $data, array('k' => $_SESSION['id'])) or die();
+
+        return ["cuentaActualizada" => true];
+    }
+    
+
 }

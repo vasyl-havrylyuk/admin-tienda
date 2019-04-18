@@ -50,4 +50,9 @@ class FrontalController extends CI_Controller {
     public function compra() {
         echo json_encode($this->FrontalModel->compra($_POST));
     }
+
+    public function actualizarCuenta() {
+        echo json_encode($this->FrontalModel->actualizarCuenta($_POST));
+    }
+
 }

@@ -73,6 +73,7 @@ $route['comprobarLogin'] = 'FrontalController/comprobarLogin';
 $route['cerrarsesion'] = 'FrontalController/cerrarsesion';
 $route['registro'] = 'FrontalController/registro';
 $route['compra'] = 'FrontalController/compra';
+$route['actualizarCuenta'] = 'FrontalController/actualizarCuenta';
 
 
 
