@@ -67,6 +67,7 @@ $route['json_getCategorias'] = 'FrontalController/getCategorias';
 $route['json_getMarcas'] = 'FrontalController/getMarcas';
 $route['json_getDetalleArticulo/(:num)'] = 'FrontalController/getDetalleArticulo';
 $route['json_getDetallesUsuario'] = 'FrontalController/getDetallesUsuario';
+$route['json_getHistorialPedidos'] = 'FrontalController/getHistorialPedidos';
 
 $route['autenticacion'] = 'FrontalController/autenticacion';
 $route['comprobarLogin'] = 'FrontalController/comprobarLogin';

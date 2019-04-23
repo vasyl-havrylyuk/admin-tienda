@@ -280,4 +280,17 @@ class FrontalModel extends CI_Model {
     }
     
 
+    public function getHistorialPedidos() {
+        $id = $_SESSION['id'];
+
+        $sql = "SELECT earticulo.sImagen as imagen, earticulo.sNombre as nombre, rpedidoarticulo.iCantidad as cantidad, epedido.dFecha as fecha, earticulo.dPrecio as pvp, earticulo.dPrecio * rpedidoarticulo.iCantidad as total 
+        FROM eusuario, earticulo, epedido, rpedidoarticulo 
+        WHERE epedido.xUsuario_k = eusuario.k AND eusuario.k = '$id' AND rpedidoarticulo.xPedido_k = epedido.k AND rpedidoarticulo.xArticulo_k = earticulo.k";
+        
+        $query = $this->con->query($sql);
+        
+        $historial = $query->result_array();
+
+        return $historial;
+    }
 }

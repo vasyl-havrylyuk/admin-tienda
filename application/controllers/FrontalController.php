@@ -55,4 +55,9 @@ class FrontalController extends CI_Controller {
         echo json_encode($this->FrontalModel->actualizarCuenta($_POST));
     }
 
+
+    public function getHistorialPedidos() {
+        echo json_encode($this->FrontalModel->getHistorialPedidos());
+    }
+
 }
