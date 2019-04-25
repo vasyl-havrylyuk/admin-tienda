@@ -15,11 +15,17 @@ class AdminController extends CI_Controller {
             'layout'    => 'ly_admin',
             'titulo'    => 'Home',
             'style'     => '',
-            'js'        => ''
+            'js'        => 'home'
         );
 
         $this->layouts->view($vista);
     }
+
+    public function getGanancias() {
+
+        echo json_encode($_GET);
+    }
+
 
 
 

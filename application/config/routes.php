@@ -6,8 +6,9 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 
-// GRAFICOS POR DEFECTO
+// HOME
 $route['default_controller'] = 'AdminController/home';
+$route['getGanancias'] = 'AdminController/getGanancias';
 
 
 

@@ -49,6 +49,27 @@ class BackModel extends CI_Model {
 
 
 
+
+    public function getGanancias() {
+        $query = $this->con->query(
+            "SELECT SUM(earticulo.dPrecio) as gananciaMensual
+            FROM 
+            earticulo, epedido, rpedidoarticulo
+            WHERE
+            rpedidoarticulo.xPedido_k = epedido.k AND
+            rpedidoarticulo.xArticulo_k = earticulo.k AND
+            epedido.dFecha LIKE '%-04-%'"
+        );
+
+        return $query->row('gananciaMensual');
+    }
+
+
+
+
+
+
+
     public function getArticulos () {
         $sql = "SELECT * FROM eArticulo";
         $query = $this->con->query($sql);
