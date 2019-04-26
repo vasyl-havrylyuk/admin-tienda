@@ -1,19 +1,55 @@
-var numMes = [01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12];
-
 var meses = [];
 
-for (let i = 01; i < 12; i++) {
-    $.getJSON("getGanancias", {"numMes": numMes[i]}, function(data){
-        meses.push(data.numMes);
+// Inicialiazamos el array meses con 12 posiciones
+reinicializarMeses();
+
+// Mostramos las ganancias del año seleccionado por defecto
+mostrarGanancias($('#verGanancia').val());
+
+
+// Asignamos evento al select
+$('#verGanancia').change(mostrarGanancias);
+
+
+
+
+
+
+
+function mostrarGanancias(evento) {
+    anio = evento || evento.target.value;
+
+    $.getJSON("getGanancias", {"anio": evento.target.value}, function(data){
+    
+        // Ordenamos por fecha el array
+        data.sort(function(a, b){
+            return new Date(a.fecha) - new Date(b.fecha);
+        });
+    
+        // Recorremos el array de las ganancias
+        for (let i = 0; i < data.length; i++) {
+            meses[new Date(data[i].fecha).getMonth()] += parseFloat(data[i].cantidad * data[i].pvp);
+        }
+
+        console.log(meses);
+
+        reinicializarMeses();
     });
 }
 
 
 
-setTimeout(function(){
-    meses.sort(function(a,b){return a-b});
+function reinicializarMeses() {
+    for (let i = 0; i < 12; i++) {
+        meses[i] = 0;
+    };
+}
 
-    var chart = new Chart($('#ganancias'), {
+
+
+
+/*
+var chart = new Chart($('#ganancias'), {
     type: 'line',
     data: {
         labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
@@ -32,5 +68,4 @@ setTimeout(function(){
             display: false
         }
     }
-});
-}, 200);
+});*/

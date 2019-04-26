@@ -22,8 +22,7 @@ class AdminController extends CI_Controller {
     }
 
     public function getGanancias() {
-
-        echo json_encode($_GET);
+        echo json_encode($this->BackModel->getGanancias($_GET["anio"]));
     }
 
 

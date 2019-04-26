@@ -50,18 +50,18 @@ class BackModel extends CI_Model {
 
 
 
-    public function getGanancias() {
+    public function getGanancias($anio) {
         $query = $this->con->query(
-            "SELECT SUM(earticulo.dPrecio) as gananciaMensual
+            "SELECT epedido.dFecha as fecha, earticulo.dPrecio as pvp, rpedidoarticulo.iCantidad as cantidad
             FROM 
             earticulo, epedido, rpedidoarticulo
             WHERE
             rpedidoarticulo.xPedido_k = epedido.k AND
             rpedidoarticulo.xArticulo_k = earticulo.k AND
-            epedido.dFecha LIKE '%-04-%'"
+            epedido.dfecha LIKE '$anio-%-%'"
         );
 
-        return $query->row('gananciaMensual');
+        return $query->result_array();
     }
 
 
