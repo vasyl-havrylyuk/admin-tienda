@@ -6,12 +6,8 @@ reinicializarMeses();
 // Mostramos las ganancias del año seleccionado por defecto
 mostrarGanancias($('#verGanancia').val());
 
-
 // Asignamos evento al select
 $('#verGanancia').change(mostrarGanancias);
-
-
-
 
 
 
