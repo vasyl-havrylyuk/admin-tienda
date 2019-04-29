@@ -65,6 +65,39 @@ class BackModel extends CI_Model {
     }
 
 
+    public function getTopCompradores() {
+
+        $query = $this->con->query(
+            "SELECT eusuario.*, COUNT(eusuario.sUser) as compras
+
+            FROM
+            epedido, eusuario
+
+            WHERE
+            epedido.xUsuario_k = eusuario.k
+
+            GROUP BY eusuario.sUser
+            ORDER BY COUNT(eusuario.sUser) DESC
+            LIMIT 3"
+        );
+
+        return $query->result_array();
+    }
+
+    public function getStocks() {
+        $query = $this->con->query(
+            "SELECT
+            earticulo.sNombre as nombre, earticulo.iStock as stock
+            
+            FROM 
+            earticulo
+            
+            ORDER BY earticulo.iStock ASC" 
+        );
+
+        return $query->result_array();
+    }
+
 
 
 

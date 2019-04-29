@@ -9,12 +9,14 @@ class AdminController extends CI_Controller {
     }
 
     public function home() {
+        $data = ["topCompradores" => $this->BackModel->getTopCompradores()];
+
         $vista = array(
             'vista'     => 'admin/view_home',
-            'params'    =>  array(),
+            'params'    =>  $data,
             'layout'    => 'ly_admin',
-            'titulo'    => 'Home',
-            'style'     => '',
+            'titulo'    => 'Home    ',
+            'style'     => 'home',
             'js'        => 'home'
         );
 
@@ -24,6 +26,16 @@ class AdminController extends CI_Controller {
     public function getGanancias() {
         echo json_encode($this->BackModel->getGanancias($_GET["anio"]));
     }
+
+    public function getTopCompradores() {
+        echo json_encode($this->BackModel->getTopCompradores());
+    }
+
+    public function getStocks() {
+        echo json_encode($this->BackModel->getStocks());
+    }
+    
+
 
 
 
