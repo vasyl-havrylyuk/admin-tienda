@@ -15,7 +15,7 @@ class AdminController extends CI_Controller {
             'vista'     => 'admin/view_home',
             'params'    =>  $data,
             'layout'    => 'ly_admin',
-            'titulo'    => 'Home    ',
+            'titulo'    => 'Panel principal',
             'style'     => 'home',
             'js'        => 'home'
         );
@@ -35,6 +35,10 @@ class AdminController extends CI_Controller {
         echo json_encode($this->BackModel->getStocks());
     }
     
+
+    public function setStock() {
+        $this->BackModel->setStock($_POST);
+    }
 
 
 

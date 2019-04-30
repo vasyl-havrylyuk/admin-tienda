@@ -1,10 +1,36 @@
-nav .menu-items {
-    border-bottom: 1px solid rgb(88, 88, 88);
-    border-right: 1px solid rgb(88, 88, 88);
-    border-bottom-right-radius: 10px;
-    background: #fbfbfb;
+header {
+  background: #f8f8f8;
+  border-bottom: 1px solid #efefef;
 }
 
+
+#notificacionWrapper {
+  position: relative;
+  margin-right: 20px;
+}
+#notificacionWrapper .campana {
+  position: absolute;
+  color: #000 !important;
+  font-size: 20px;
+}
+#notificacionWrapper .number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 16px;
+  height: 16px;
+
+  background: rgb(231, 10, 10);
+  color: white;
+  text-align: center;
+  top: 2px;
+  left: 7px;
+  position: absolute;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+}
 
 .menu-items * {
   transition: unset;
@@ -49,6 +75,10 @@ nav .menu-items {
 
 
 
+
+
+
 /* MIS CLASES */
 .cursor-pointer {cursor: pointer;}
 .no-underline {text-decoration: none !important;}
+.remove-hover:hover {all: unset;}

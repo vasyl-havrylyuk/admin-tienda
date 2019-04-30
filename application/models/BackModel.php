@@ -86,8 +86,7 @@ class BackModel extends CI_Model {
 
     public function getStocks() {
         $query = $this->con->query(
-            "SELECT
-            earticulo.sNombre as nombre, earticulo.iStock as stock
+            "SELECT *
             
             FROM 
             earticulo
@@ -98,6 +97,15 @@ class BackModel extends CI_Model {
         return $query->result_array();
     }
 
+    public function setStock($datos) {
+        $data = array(
+            'iStock' => sanear($datos['valor'])
+        );
+        $this->con->update('eArticulo', $data, array('k' => sanear($datos['id'])));
+    }
+
+
+    
 
 
 

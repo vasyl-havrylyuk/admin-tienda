@@ -11,6 +11,7 @@ $route['default_controller'] = 'AdminController/home';
 $route['getGanancias'] = 'AdminController/getGanancias';
 $route['getTopCompradores'] = 'AdminController/getTopCompradores';
 $route['getStocks'] = 'AdminController/getStocks';
+$route['setStock'] = 'AdminController/setStock';
 
 
 

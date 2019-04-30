@@ -31,12 +31,12 @@
 </head>
 <body>
     
-    <header class="mb-2">
+    <header class="mb-4">
         <nav class="py-2">
             <div class="container d-flex justify-content-between align-items-center">
                 
                 <div class="menu-items">
-                    <a href="<?php echo base_url(); ?>" class="btn">Home</a>
+                    <a href="<?php echo base_url(); ?>" class="fas fa-home btn btn-outline-dark"></a>
             
 
                     <div class="dropdown">
@@ -71,9 +71,19 @@
                         </div>
                     </div> 
                     
+
+                    
                 </div>
         
+                
+
                 <div class="btn-group">
+                    <div id="notificacionWrapper" class="d-flex align-items-center">
+                        <i class="far fa-bell text-danger campana"></i>
+                        <span class="badget number">2</span>
+                    </div>
+
+
                     <button type="button" class="btn dropdown-toggle pr-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Bienvenido: <?php echo $nombreAdmin; ?>
                     </button>
@@ -103,7 +113,7 @@
     <script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
     <script src="<?php echo base_url()."assets/js/_admin.js"; ?>"></script>
 
     <?php 
