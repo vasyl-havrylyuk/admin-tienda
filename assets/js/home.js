@@ -1,3 +1,6 @@
+$('#pedidos').modal('toggle');
+
+
 var meses = new Array();
 
 reiniciarMeses();
@@ -24,9 +27,13 @@ function getGanancias(evento) {
         for (let i = 0; i < data.length; i++) {
             meses[new Date(data[i].fecha).getMonth()] += parseFloat(data[i].cantidad * data[i].pvp);
         }
+        // Limitamos los numeros del array meses a 2 decimales
+        for (let i = 0; i < meses.length; i++) {
+            meses[i] = meses[i].toFixed(2);
+        }
 
+        // Inicializamos el gráfico con los datos del array meses
         inicializarGraficoGanancias(meses);
-        
     });
 }
 

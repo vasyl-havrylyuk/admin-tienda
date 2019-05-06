@@ -3,10 +3,54 @@
 ?>
 
 
+<div class="modal fade" id="pedidos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog pedidos" role="document">
+    <div class="modal-content pedidos">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Pedidos en curso</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th class="text-center">#</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Dirección</th>
+                    <th class="text-center">Linea de pedido</th>
+                    <th class="text-center">Cantidad</th>
+                    <th class="text-center">Estado</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td class="text-center">1</td>
+                    <td>Vasyl</td>
+                    <td>Havrylyuk</td>
+                    <td>Carrera 4, 7ªB</td>
+                    <td class="text-center" target="_blank"><a href="#">Ver</a></td>
+                    <td class="text-center">3</td>
+                    <td class="text-center"><i class="fas fa-times text-danger estado"></i></td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 <div class="modal fade" id="stock" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <form action="url para actualizar" method="post">
+      <div>
         <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLongTitle">Stock</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -14,7 +58,7 @@
             </button>
         </div>
         <div class="modal-body"></div>
-      </form>
+      </div>
     </div>
   </div>
 </div>
