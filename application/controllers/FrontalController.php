@@ -60,4 +60,8 @@ class FrontalController extends CI_Controller {
         echo json_encode($this->FrontalModel->getHistorialPedidos());
     }
 
+
+    public function enviarMensaje() {
+        echo json_encode($this->FrontalModel->enviarMensaje($_POST));
+    }
 }

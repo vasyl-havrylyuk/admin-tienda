@@ -12,6 +12,8 @@ $route['getGanancias'] = 'AdminController/getGanancias';
 $route['getTopCompradores'] = 'AdminController/getTopCompradores';
 $route['getStocks'] = 'AdminController/getStocks';
 $route['setStock'] = 'AdminController/setStock';
+$route['getPedidos'] = 'AdminController/getPedidos';
+
 
 
 
@@ -80,6 +82,8 @@ $route['cerrarsesion'] = 'FrontalController/cerrarsesion';
 $route['registro'] = 'FrontalController/registro';
 $route['compra'] = 'FrontalController/compra';
 $route['actualizarCuenta'] = 'FrontalController/actualizarCuenta';
+$route['enviarMensaje'] = 'FrontalController/enviarMensaje';
+
 
 
 

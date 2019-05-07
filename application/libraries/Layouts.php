@@ -6,6 +6,8 @@ class Layouts {
 
     function __construct() {
         $this->CI =& get_instance();
+        
+
     }
 
     public function view($data = array()) {
@@ -17,6 +19,8 @@ class Layouts {
                 'titulo' => $data['titulo'],
                 'style' => $data['style'],
                 'js' => $data['js'],
+
+                'numPedidos' => $this->CI->BackModel->numPedidos()
             ));
         }
     }

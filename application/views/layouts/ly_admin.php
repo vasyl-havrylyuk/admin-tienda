@@ -30,7 +30,6 @@
 
 </head>
 <body>
-    
     <header class="mb-4">
         <nav class="py-2">
             <div class="container d-flex justify-content-between align-items-center">
@@ -80,7 +79,7 @@
                 <div class="btn-group">
                     <div id="notificacionWrapper" class="d-flex align-items-center">
                         <i class="far fa-bell text-danger campana"></i>
-                        <span class="badget number">2</span>
+                        <span class="badget number"><?php echo $numPedidos; ?></span>
                     </div>
 
 
@@ -103,6 +102,44 @@
             <h1 class="lead display-4 mb-4"><?php echo $titulo; ?></h1>
             
             <hr>
+
+            <div class="modal fade" id="pedidos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog pedidos" role="document">
+                    <div class="modal-content pedidos">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">2 PEDIDOS SIN RESOLVER</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                        <div class="modal-body">
+                            <table>
+                                
+                                    <tr class="lead">
+                                        <th class="text-center">#</th>
+                                        <th>Nombre</th>
+                                        <th>Apellido</th>
+                                        <th>Dirección</th>
+                                        <th class="text-center">Linea de pedido</th>
+                                        <th class="text-center">Cantidad</th>
+                                        <th class="text-center">Estado</th>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td>Vasyl</td>
+                                        <td>Havrylyuk</td>
+                                        <td>Carrera 4, 7ªB</td>
+                                        <td class="text-center" target="_blank"><a href="#">Ver</a></td>
+                                        <td class="text-center">3</td>
+                                        <td class="text-center"><i class="fas fa-times text-danger estado"></i></td>
+                                    </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
             <?php
                 echo $contenido;

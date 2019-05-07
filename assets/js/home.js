@@ -1,6 +1,3 @@
-$('#pedidos').modal('toggle');
-
-
 var meses = new Array();
 
 reiniciarMeses();
@@ -212,7 +209,7 @@ function inicializarGraficoStocks(data) {
         var value = chart.data.datasets[activado._datasetIndex].data[activado._index];
 
         if (activado) {
-            $modalBody = $('.modal-body').empty();
+            $modalBody = $('#stock .modal-body').empty();
             $inputGroup = $('<div class="input-group"></div>').appendTo($modalBody);
             $stock = $('<input type="number" id="'+id+'" value="'+value+'" class="form-control" name="stock">').appendTo($inputGroup);
             
@@ -239,6 +236,7 @@ function inicializarGraficoStocks(data) {
                 
                 
                 setStocks($stock.prop("id"), $stock.prop("value"));
+
 
                 setTimeout(function(){
                     $('#stock').modal('toggle');

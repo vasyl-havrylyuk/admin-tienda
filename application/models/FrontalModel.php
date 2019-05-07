@@ -293,4 +293,26 @@ class FrontalModel extends CI_Model {
 
         return $historial;
     }
+
+
+
+    public function enviarMensaje($data) {
+        // Enviamos al usuario un email de correo recibido y nos pondriamos en contacto
+        $this->email->initialize(array('mailtype' => 'html'));
+        $this->email->from('webcalistenia@gmail.com', 'WebCalistenia');
+        $this->email->to($data['email']);
+        $this->email->subject('Contacto');
+
+        $mensaje = $data['nombre'].", su mensaje ha sido enviado correctamente, nos pondremos en contacto con usted en cuanto sea posible.<br><br>Un cordial saludo.";
+        $this->email->message($mensaje);
+
+        if ($this->email->send()) {
+            $resultado = ["mensajeEnviado" => true];
+        } else {
+            $resultado = ["mensajeEnviado" => false];
+        }
+
+        
+        return $resultado;
+    }
 }

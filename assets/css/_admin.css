@@ -1,3 +1,10 @@
+/* MIS CLASES */
+.cursor-pointer {cursor: pointer;}
+.no-underline {text-decoration: none !important;}
+.remove-hover:hover {all: unset;}
+
+
+
 header {
   background: #f8f8f8;
   border-bottom: 1px solid #efefef;
@@ -7,6 +14,7 @@ header {
 #notificacionWrapper {
   position: relative;
   margin-right: 20px;
+  cursor: pointer;
 }
 #notificacionWrapper .campana {
   position: absolute;
@@ -23,13 +31,16 @@ header {
 
   background: rgb(231, 10, 10);
   color: white;
+  
   text-align: center;
   top: 2px;
   left: 7px;
   position: absolute;
   border-radius: 50%;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: bold;
+  border: 2px solid #f8f8f8;
+  padding: 6px;
 }
 
 .menu-items * {
@@ -72,13 +83,40 @@ header {
 }
 
 
+#pedidos table {
+  width: 100%;
+}
+#pedidos table tr:first-child {
+  background: rgb(80, 127, 161);
+  font-size: 14px;
+  color: white;
+}
+#pedidos table tr:first-child th {
+  padding: 5px 10px;
+}
+#pedidos table tr td {
+  font-size: 13px;
+  padding: 1px 10px;
+}
+#pedidos table tr th, #pedidos table tr td {
+  border: 1px solid rgba(0, 0, 0, 0.205);
+}
 
 
 
 
 
 
-/* MIS CLASES */
-.cursor-pointer {cursor: pointer;}
-.no-underline {text-decoration: none !important;}
-.remove-hover:hover {all: unset;}
+@media (min-width: 576px) {
+  .modal-dialog.pedidos { max-width: none; }
+}
+
+.modal-dialog.pedidos {
+width: 98%;
+height: 92%;
+padding: 0;
+}
+
+.modal-content.pedidos {
+  height: 99%;
+}

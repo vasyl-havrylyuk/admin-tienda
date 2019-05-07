@@ -10,19 +10,3 @@ select#verGanancia {
     padding: 50px;
     border: 1px solid #f2f2f2;
 }
-
-
-
-@media (min-width: 576px) {
-    .modal-dialog.pedidos { max-width: none; }
-}
-  
-.modal-dialog.pedidos {
-  width: 98%;
-  height: 92%;
-  padding: 0;
-}
-
-.modal-content.pedidos {
-  height: 99%;
-}

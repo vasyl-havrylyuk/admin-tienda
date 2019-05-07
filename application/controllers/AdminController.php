@@ -9,6 +9,7 @@ class AdminController extends CI_Controller {
     }
 
     public function home() {
+
         $data = ["topCompradores" => $this->BackModel->getTopCompradores()];
 
         $vista = array(
@@ -35,10 +36,15 @@ class AdminController extends CI_Controller {
         echo json_encode($this->BackModel->getStocks());
     }
     
-
     public function setStock() {
         $this->BackModel->setStock($_POST);
     }
+
+    public function getPedidos() {
+        echo json_encode($this->BackModel->getPedidos());
+    }
+    
+
 
 
 
