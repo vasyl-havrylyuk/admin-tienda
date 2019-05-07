@@ -114,26 +114,14 @@
                     </div>
                         <div class="modal-body">
                             <table>
-                                
-                                    <tr class="lead">
-                                        <th class="text-center">#</th>
-                                        <th>Nombre</th>
-                                        <th>Apellido</th>
-                                        <th>Dirección</th>
-                                        <th class="text-center">Linea de pedido</th>
-                                        <th class="text-center">Cantidad</th>
-                                        <th class="text-center">Estado</th>
-                                    </tr>
-
-                                    <tr>
-                                        <td class="text-center">1</td>
-                                        <td>Vasyl</td>
-                                        <td>Havrylyuk</td>
-                                        <td>Carrera 4, 7ªB</td>
-                                        <td class="text-center" target="_blank"><a href="#">Ver</a></td>
-                                        <td class="text-center">3</td>
-                                        <td class="text-center"><i class="fas fa-times text-danger estado"></i></td>
-                                    </tr>
+                                <tr class="lead">
+                                    <th class="text-center">#Pedido</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Dirección</th>
+                                    <th class="text-center">Línea de pedido</th>
+                                    <th class="text-center">Estado</th>
+                                </tr>
                             </table>
                         </div>
                     </div>

@@ -15,10 +15,19 @@ $('nav div.dropdown').last().mouseout(function(){$('.menu-items').css({'borderBo
 $('#notificacionWrapper').click(function(){
     $.getJSON('getPedidos', {}, function(data){
         $tituloModal = $('#pedidos .modal-title').empty();
-        //$cuerpoModal = $('#pedidos .modal-body').empty();
-
+        $('#pedidos table tr:gt(0)').remove();
+        $tablaModal = $('#pedidos table');
         $tituloModal.text(data.length+" PEDIDOS SIN RESOLVER");
 
+        for (let i = 0; i < data.length; i++) {
+            $row = $('<tr></tr>').appendTo($tablaModal);
+            $td = $('<td class="text-center">'+data[i].pedido+'</td>').appendTo($row);
+            $td = $('<td>'+data[i].nombre+'</td>').appendTo($row);
+            $td = $('<td>'+data[i].apellido+'</td>').appendTo($row);
+            $td = $('<td>'+data[i].direccion+'</td>').appendTo($row);
+            $td = $('<td class="text-center" target="_blank"><a href="#">Ver</a></td>').appendTo($row);
+            $td = $('<td class="text-center"><i class="fas fa-times text-danger estado"></i></td>').appendTo($row);
+        }
 
         $('#pedidos').modal('toggle');
     });
