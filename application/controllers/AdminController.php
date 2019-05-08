@@ -8,6 +8,25 @@ class AdminController extends CI_Controller {
         parent::__construct();
     }
 
+
+
+
+    public function getPedidos() {
+        echo json_encode($this->BackModel->getPedidos());
+    }
+
+    public function resolverPedido() {
+        $this->BackModel->resolverPedido($_POST);
+    }
+
+
+
+
+
+
+
+
+
     public function home() {
 
         $data = ["topCompradores" => $this->BackModel->getTopCompradores()];
@@ -40,13 +59,7 @@ class AdminController extends CI_Controller {
         $this->BackModel->setStock($_POST);
     }
 
-    public function getPedidos() {
-        echo json_encode($this->BackModel->getPedidos());
-    }
     
-
-
-
 
 
 
@@ -398,7 +411,7 @@ class AdminController extends CI_Controller {
     public function insertarUsuario() {
         $this->BackModel->insertarUsuario($_POST);
 
-        //header('Location: '.base_url().'usuarios');
+        header('Location: '.base_url().'usuarios');
     }
 
     // EDITAMOS USUARIO

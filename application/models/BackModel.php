@@ -16,10 +16,37 @@ class BackModel extends CI_Model {
 
 
     public function numPedidos() {
-        $query = $this->con->query("SELECT * FROM ePedido");
+        $query = $this->con->query("SELECT * FROM ePedido WHERE bEnviado = 0");
         return $query->num_rows();
     }
 
+    public function getPedidos() {
+        $sql = "SELECT epedido.k as pedido, eusuario.sNombre as nombre, eusuario.sApellido as apellido, eusuario.sDireccion as direccion, epedido.bEnviado as enviado
+        FROM eusuario, epedido
+        WHERE epedido.xUsuario_k = eusuario.k
+        ORDER BY epedido.bEnviado ASC";
+        $query = $this->con->query($sql);
+        $pedidos = $query->result_array();
+
+        foreach ($pedidos as $key => $value) {
+            $pedido = $pedidos[$key]['pedido'];
+
+            $sql = "SELECT earticulo.k as k, earticulo.sNombre as nombre, rpedidoarticulo.iCantidad as cantidad
+            FROM earticulo, rpedidoarticulo
+            WHERE rpedidoarticulo.xPedido_k = '$pedido' AND rpedidoarticulo.xArticulo_k = earticulo.k";
+            $query = $this->con->query($sql);
+            $pedidos[$key]['lineaPedido'] = $query->result_array();
+        }
+        
+        return $pedidos;
+    }
+    
+    public function resolverPedido($datos) {
+        $data = array(
+            'bEnviado' => '1'
+        );
+        $this->con->update('ePedido', $data, array('k' => sanear($datos['pedido'])));
+    }
 
 
 
@@ -114,26 +141,11 @@ class BackModel extends CI_Model {
         $this->con->update('eArticulo', $data, array('k' => sanear($datos['id'])));
     }
 
-    public function getPedidos() {
-        $sql = "SELECT epedido.k as pedido, eusuario.sNombre as nombre, eusuario.sApellido as apellido, eusuario.sDireccion as direccion
-        FROM eusuario, epedido
-        WHERE epedido.xUsuario_k = eusuario.k";
-        $query = $this->con->query($sql);
-        $pedidos = $query->result_array();
-
-        foreach ($pedidos as $key => $value) {
-            $pedido = $pedidos[$key]['pedido'];
-
-            $sql = "SELECT earticulo.sNombre, rpedidoarticulo.iCantidad
-            FROM earticulo, rpedidoarticulo
-            WHERE rpedidoarticulo.xPedido_k = '$pedido' AND rpedidoarticulo.xArticulo_k = earticulo.k";
-            $query = $this->con->query($sql);
-            $pedidos[$key]['lineaPedido'] = $query->result_array();
-        }
-        
-        return $pedidos;
-    }
     
+
+
+
+
 
 
 

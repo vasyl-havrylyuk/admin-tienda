@@ -13,7 +13,7 @@ header {
 
 #notificacionWrapper {
   position: relative;
-  margin-right: 20px;
+  margin-right: 25px;
   cursor: pointer;
 }
 #notificacionWrapper .campana {
@@ -83,25 +83,41 @@ header {
 }
 
 
-#pedidos table {
+#pedidos .tablaPedidos {
   width: 100%;
 }
-#pedidos table tr:first-child {
+#pedidos .tablaPedidos tr:first-child {
   background: rgb(80, 127, 161);
   font-size: 14px;
   color: white;
 }
-#pedidos table tr:first-child th {
+#pedidos .tablaPedidos tr:first-child th {
   padding: 5px 10px;
 }
-#pedidos table tr td {
+#pedidos .tablaPedidos tr td {
   font-size: 13px;
   padding: 1px 10px;
 }
-#pedidos table tr th, #pedidos table tr td {
+#pedidos .tablaPedidos tr th, #pedidos .tablaPedidos tr td {
   border: 1px solid rgba(0, 0, 0, 0.205);
 }
+#pedidos .tablaPedidos tr td.sinResolverWrapper:hover {
+  cursor: pointer;
+  background:rgba(155, 155, 155, 0.2);
+}
 
+
+#pedidos .tablaArticulos {
+  width: 90%;
+  margin: 5px auto 10px auto;
+}
+
+#pedidos .tablaArticulos tr {
+  border-bottom: 1px solid black !important;
+}
+#pedidos .tablaArticulos tr td {
+  text-align: center !important;
+}
 
 
 
@@ -115,8 +131,13 @@ header {
 width: 98%;
 height: 92%;
 padding: 0;
+
 }
 
 .modal-content.pedidos {
   height: 99%;
 }
+.modal-content.pedidos .modal-body {
+  overflow-x: scroll;
+}
+

@@ -113,7 +113,7 @@
                         </button>
                     </div>
                         <div class="modal-body">
-                            <table>
+                            <table class="tablaPedidos">
                                 <tr class="lead">
                                     <th class="text-center">#Pedido</th>
                                     <th>Nombre</th>

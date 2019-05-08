@@ -6,14 +6,20 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 
+
+// GLOBAL
+$route['getPedidos'] = 'AdminController/getPedidos';
+$route['resolverPedido'] = 'AdminController/resolverPedido';
+
+
+
+
 // HOME
 $route['default_controller'] = 'AdminController/home';
 $route['getGanancias'] = 'AdminController/getGanancias';
 $route['getTopCompradores'] = 'AdminController/getTopCompradores';
 $route['getStocks'] = 'AdminController/getStocks';
 $route['setStock'] = 'AdminController/setStock';
-$route['getPedidos'] = 'AdminController/getPedidos';
-
 
 
 
