@@ -9,7 +9,6 @@ $('nav div.dropdown').last().mouseout(function(){$('.menu-items').css({'borderBo
 
 
 
-
 $('#notificacionWrapper').click(function(){
     getPedidos();
     $('#pedidos').modal('toggle');
@@ -17,8 +16,6 @@ $('#notificacionWrapper').click(function(){
 
 
 function getPedidos() {
-    console.log(window.location.href);
-
     $.getJSON('/admin/getPedidos', {}, function(data){
         actualizarModalYnotificacion(data);
     });
@@ -79,6 +76,6 @@ function actualizarModalYnotificacion(data) {
 
 function resolverPedido(event) {
     const pedido = event.data.pedido;
-    $.post('resolverPedido', {"pedido":pedido}, function(){});
+    $.post('/admin/resolverPedido', {"pedido":pedido}, function(){});
     getPedidos();
 }

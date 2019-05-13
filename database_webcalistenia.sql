@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 08, 2019 at 11:53 AM
+-- Generation Time: May 13, 2019 at 10:43 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -44,11 +44,11 @@ CREATE TABLE `earticulo` (
 --
 
 INSERT INTO `earticulo` (`k`, `iStock`, `sNombre`, `xTipo_k`, `xMarca_k`, `sDescripcion`, `dPrecio`, `sImagen`) VALUES
-(1, 1, 'Anillos de Gimnasio Olímpico', 1, 1, 'Los anillos son gruesos y sólidos y no tienen ninguna astilla o agujeros de ninguna clase, funcionan sus manos por todas partes de ellas y son apenas lisas y sólidas. El material de madera sólida proporciona un excelente agarre sin deslizamiento incluso cuando las palmas comienzan a sudar. Diámetro perfecto de los anillos.\\r\\n\\r\\nCaracterísticas\\r\\n- Diámetro: 235mm\\r\\n- Diámetro interno: 172mm\\r\\n- Anillo Espesor: 32mm\\r\\n- Longitud de la correa: 4.57m\\r\\n- Ancho de la correa: 38mm\\r\\n- Peso: 1.82kg\\r\\n- Capacidad: 365kg.', '32.99', 'anillas1.jpg'),
-(2, 33, 'Anillas de Gimnasia para Entrenamiento', 1, 2, 'Anillos de la gimnasia de madera con correas de la hebilla, aros de ejercicio multifunción ajustable.\\r\\n\\r\\nCaracterísticas:\\r\\n- Material: madera de haya / Abedul\\r\\n- Correas : Ancho en 28 mm\\r\\n- Correas de nylon correa: 2.5cm x (450520) cm\\r\\n- Diámetro del tubo del anillo: 32 mm\\r\\n- Diámetro exterior: 230 mm\\r\\n- Carga máxima: hasta 300 kg', '26.99', 'anillas2.jpg'),
-(3, 47, 'Magnesio Líquido. Tubo de 200 ML', 2, 5, 'AGARRE INMEJORABLE. El magnesio líquido le proporciona un agarre más firme, especialmente útil para la escalada y otras actividades deportivas que exijan una presa fiable. Olvídese de las manos sudorosas gracias al agarre perfecto que garantiza nuestro magnesio líquido.\\r\\n\\r\\nMÁXIMA CALIDAD. Fabricado en Europa, el magnesio líquido de VIA FORTIS ha superado todos los controles de calidad exigidos. Escoja lo mejor: su piel se lo agradecerá.\\r\\n\\r\\nSIN MANCHAS. A diferencia de las bolas de magnesio, el magnesio líquido no deja manchas. Muchos gimnasios no permiten utilizar magnesio en polvo, por lo que los usuarios se decantan por el magnesio líquido, con la confianza de poder utilizarlo en cualquier lugar. El magnesio seco puede arruinar las prendas textiles, algo que no sucede con el magnesio líquido.', '12.90', 'magnesio1.jpg'),
-(4, 28, 'Anillas Olímpicas Gimnasia y Crossfit - Correas Numeradas', 1, 3, 'AGARRE PERFECTO (AUNQUE TE SUDEN LAS MANOS) - Hechas en madera de abedul laminado, nuestras anillas tienen un tacto suave y sedoso proporcionando un agarre como ningún otro material. Anillas que no resbalan te aseguran el máximo rendimiento en los ejercicios más extremos con una confianza absoluta. Olvídate de los plásticos, olvídate del sudor, centrate en tus entrenamientos y wods para mejorar cada día.\\r\\n\\r\\nGRAN SENSACIÓN DE SEGURIDAD - Cintas que no se rompen. Lesionarse por culpa de un material defectuoso o de mala calidad es cosa seria. Nuestras anillas usan las cintas más resistentes y anchas del mercado (38mm frente a los habituales 25mm). La capacidad de resistencia de las correas es de 362kg. Estas son las anillas de suspensión más seguras que puedes encontrar y que te permitirán dar el máximo de ti sin tener que preocuparte.', '39.95', 'anillas3.jpg'),
-(5, 24, 'Magnesio de Escalada', 2, 5, 'Material duro MAMMUT\\r\\nMagnesio Montañismo, alpinismo y trekking Unisex Adulto\\r\\nLiquid 200 Ml (2290-00611-9001)\\r\\n', '13.36', 'magnesio2.jpg');
+(1, 1, 'Anillos de Gimnasio Olímpico', 1, 1, 'Los anillos son gruesos y sólidos y no tienen ninguna astilla o agujeros de ninguna clase, funcionan sus manos por todas partes de ellas y son apenas lisas y sólidas. El material de madera sólida proporciona un excelente agarre sin deslizamiento incluso cuando las palmas comienzan a sudar. Diámetro perfecto de los anillos.\r\n\r\nCaracterísticas\r\n- Diámetro: 235mm\r\n- Diámetro interno: 172mm\r\n- Anillo Espesor: 32mm\r\n- Longitud de la correa: 4.57m\r\n- Ancho de la correa: 38mm\r\n- Peso: 1.82kg\r\n- Capacidad: 365kg.', '32.99', 'anillas1.jpg'),
+(2, 33, 'Anillas de Gimnasia para Entrenamiento', 1, 2, 'Anillos de la gimnasia de madera con correas de la hebilla, aros de ejercicio multifunción ajustable.\r\n\r\nCaracterísticas:\r\n- Material: madera de haya / Abedul\r\n- Correas : Ancho en 28 mm\r\n- Correas de nylon correa: 2.5cm x (450520) cm\r\n- Diámetro del tubo del anillo: 32 mm\r\n- Diámetro exterior: 230 mm\r\n- Carga máxima: hasta 300 kg', '26.99', 'anillas2.jpg'),
+(3, 47, 'Magnesio Líquido. Tubo de 200 ML', 2, 5, 'AGARRE INMEJORABLE.\r\nEl magnesio líquido le proporciona un agarre más firme, especialmente útil para la escalada y otras actividades deportivas que exijan una presa fiable. Olvídese de las manos sudorosas gracias al agarre perfecto que garantiza nuestro magnesio líquido.\r\n\r\nMÁXIMA CALIDAD. \r\nFabricado en Europa, el magnesio líquido de VIA FORTIS ha superado todos los controles de calidad exigidos. Escoja lo mejor: su piel se lo agradecerá.\r\n\r\nSIN MANCHAS. \r\nA diferencia de las bolas de magnesio, el magnesio líquido no deja manchas. Muchos gimnasios no permiten utilizar magnesio en polvo, por lo que los usuarios se decantan por el magnesio líquido, con la confianza de poder utilizarlo en cualquier lugar. El magnesio seco puede arruinar las prendas textiles, algo que no sucede con el magnesio líquido.', '12.90', 'magnesio1.jpg'),
+(4, 28, 'Anillas Olímpicas Gimnasia y Crossfit - Correas Numeradas', 1, 3, 'AGARRE PERFECTO (AUNQUE TE SUDEN LAS MANOS) - Hechas en madera de abedul laminado, nuestras anillas tienen un tacto suave y sedoso proporcionando un agarre como ningún otro material. Anillas que no resbalan te aseguran el máximo rendimiento en los ejercicios más extremos con una confianza absoluta. Olvídate de los plásticos, olvídate del sudor, centrate en tus entrenamientos y wods para mejorar cada día.\r\n\r\nGRAN SENSACIÓN DE SEGURIDAD - Cintas que no se rompen. Lesionarse por culpa de un material defectuoso o de mala calidad es cosa seria. Nuestras anillas usan las cintas más resistentes y anchas del mercado (38mm frente a los habituales 25mm). La capacidad de resistencia de las correas es de 362kg. Estas son las anillas de suspensión más seguras que puedes encontrar y que te permitirán dar el máximo de ti sin tener que preocuparte.', '39.95', 'anillas3.jpg'),
+(5, 24, 'Magnesio de Escalada', 2, 5, 'Material duro MAMMUT\r\nMagnesio Montañismo, alpinismo y trekking Unisex Adulto\r\nLiquid 200 Ml (2290-00611-9001)', '13.36', 'magnesio2.jpg');
 
 -- --------------------------------------------------------
 
@@ -71,7 +71,8 @@ INSERT INTO `emarca` (`k`, `sNombre`) VALUES
 (3, 'Sportvitae'),
 (4, 'VIA FORTIS'),
 (5, 'Mammut'),
-(9, 'RubberBanditz');
+(9, 'RubberBanditz'),
+(10, 'NuevaMarca');
 
 -- --------------------------------------------------------
 
@@ -235,7 +236,7 @@ ALTER TABLE `earticulo`
 -- AUTO_INCREMENT for table `emarca`
 --
 ALTER TABLE `emarca`
-  MODIFY `k` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `k` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `epedido`
 --
