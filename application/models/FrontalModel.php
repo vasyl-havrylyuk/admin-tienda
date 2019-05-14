@@ -146,48 +146,63 @@ class FrontalModel extends CI_Model {
         $password = hash('sha512', sanear($data['password']));
         $resultado = null;
 
-        $data = array(
-            'sUser'     => $usuario,
-            'sNombre'   => $nombre,
-            'sApellido' => $apellido,
-            'sDireccion' => $direccion,
-            'sDni'      => $dni,
-            'sEmail'    => $email,
-            'sPassword' => $password,
-            'dFechaRegistro' => date('Y-m-d')
-        );
 
-        $this->con->set($data);
-        $this->con->insert('eUsuario') or die(
-            $resultado = ["registrado" => false]
-        );
+        $sql = "SELECT * FROM eUsuario WHERE sUser = ?";
+        $usuarioExiste = $this->con->query($sql, array($usuario))->num_rows();
+        
+        $sql = "SELECT * FROM eUsuario WHERE sDni = ?";
+        $dniExiste = $this->con->query($sql, array($dni))->num_rows();
 
-        $resultado = ["registrado" => true];
+        $sql = "SELECT * FROM eUsuario WHERE sEmail = ?";
+        $emailExiste = $this->con->query($sql, array($email))->num_rows();
 
-
-
-
-        // Extraemos el id y la clave hasheada para formar el link de activacion de cuenta
-        $sql = "SELECT * FROM eUsuario ORDER BY k DESC LIMIT 1";
-        $query = $this->con->query($sql);
-        $id = $query->row('k');
-        $hashed_pass = $query->row('sPassword');
-
-        // Formamos el link
-        $link = base_url().'activate/'.$id.'/'.md5($id.$hashed_pass);
-
-        // Le enviamos un email de activación de cuenta al usuario registrado
-        $this->email->initialize(array('mailtype' => 'html'));
-        $this->email->from('webcalistenia@gmail.com', 'WebCalistenia');
-        $this->email->to($email);
-        $this->email->subject('Activación de cuenta');
-        $this->email->message('<a href="'.$link.'">'.$link.'</a>');
-        if ($this->email->send()) {
-            $resultado = ["registrado" => true];
+        if (!$usuarioExiste && !$dniExiste && !$emailExiste) {
+            $data = array(
+                'sUser'     => $usuario,
+                'sNombre'   => $nombre,
+                'sApellido' => $apellido,
+                'sDireccion' => $direccion,
+                'sDni'      => $dni,
+                'sEmail'    => $email,
+                'sPassword' => $password,
+                'dFechaRegistro' => date('Y-m-d')
+            );
+    
+            $this->con->set($data);
+            $this->con->insert('eUsuario') or die(
+                $resultado["registrado"] = false
+            );
+    
+            $resultado["registrado"] = true;
+    
+    
+            // Extraemos el id y la clave hasheada para formar el link de activacion de cuenta
+            $sql = "SELECT * FROM eUsuario ORDER BY k DESC LIMIT 1";
+            $query = $this->con->query($sql);
+            $id = $query->row('k');
+            $hashed_pass = $query->row('sPassword');
+    
+            // Formamos el link
+            $link = base_url().'activate/'.$id.'/'.md5($id.$hashed_pass);
+    
+            // Le enviamos un email de activación de cuenta al usuario registrado
+            $this->email->initialize(array('mailtype' => 'html'));
+            $this->email->from('webcalistenia@gmail.com', 'WebCalistenia');
+            $this->email->to($email);
+            $this->email->subject('Activación de cuenta');
+            $this->email->message('<a href="'.$link.'">'.$link.'</a>');
+            if ($this->email->send()) {
+                $resultado["registrado"] = true;
+            } else {
+                $resultado["registrado"] = false;
+            }    
         } else {
-            $resultado = ["registrado" => false];
+            $resultado['registrado'] = false;
+            if ($usuarioExiste) $resultado['usuario'] = "El usuario introducido ya está registrado";
+            if ($dniExiste) $resultado['dni'] = "El dni introducido ya está registrado";;
+            if ($emailExiste) $resultado['email'] = "El email introducido ya está registrado";;
         }
-
+        
         
         return $resultado;
     }
@@ -302,7 +317,7 @@ class FrontalModel extends CI_Model {
         $this->email->from('webcalistenia@gmail.com', 'WebCalistenia');
         $this->email->to($data['email']);
         $this->email->subject('Contacto');
-
+        
         $mensaje = $data['nombre'].", su mensaje ha sido enviado correctamente, nos pondremos en contacto con usted en cuanto sea posible.<br><br>Un cordial saludo.";
         $this->email->message($mensaje);
 
