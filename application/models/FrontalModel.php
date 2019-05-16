@@ -190,7 +190,7 @@ class FrontalModel extends CI_Model {
             $this->email->from('webcalistenia@gmail.com', 'WebCalistenia');
             $this->email->to($email);
             $this->email->subject('Activación de cuenta');
-            $this->email->message('<a href="'.$link.'">'.$link.'</a>');
+            $this->email->message('<a href="'.$link.'">Haz click en el siguiente enlace para activar tu cuenta</a>');
             if ($this->email->send()) {
                 $resultado["registrado"] = true;
             } else {
@@ -224,11 +224,13 @@ class FrontalModel extends CI_Model {
         $fecha = date('Y-m-d');
         $ultimoPedido = null;
         $direccion = null;
+        $email = null;
 
-        // Consultamos primero la dirección del usuario
-        $sql = "SELECT sDireccion FROM eUsuario WHERE k = '$id_user'";
+        // Consultamos primero la dirección del usuario y su email donde enviaremos la confirmación del pedido
+        $sql = "SELECT * FROM eUsuario WHERE k = '$id_user'";
         $query = $this->con->query($sql);
         $direccion = $query->row('sDireccion');
+        $email = $query->row('sEmail');
 
         // Primero insertamos un registro en ePedido
         $data = array(
@@ -270,7 +272,28 @@ class FrontalModel extends CI_Model {
             $data = array('iStock' => $stockActual - $cantidad);
             $this->con->update('eArticulo', $data, array('k' => $articulo));
         }
-        
+
+
+        // Enviamos un email del pedido realizado al comprador
+        $this->email->initialize(array('mailtype' => 'html'));
+        $this->email->from('webcalistenia@gmail.com', 'WebCalistenia');
+        $this->email->to($email);
+        $this->email->subject('Pedido realizado');
+        $mensaje = "La compra que acaba de realizar en WebCalistenia es la siguiente:<br><br>";
+        $mensaje .= "<table><tr><td>#</td><td>Artículo</td><td>PVP</td><td>Cantidad</td></tr>";
+        for ($i=0; $i < count($carrito); $i++) { 
+            $mensaje .= "<tr><td>".$carrito[$i]['k']."</td><td>".$carrito[$i]['nombre']."</td><td>".$carrito[$i]['precio']."</td><td>".$carrito[$i]['cantidad']."</td></tr>";
+        }
+        $mensaje .= "</table>";
+
+        $this->email->message($mensaje);
+
+        if ($this->email->send()) {
+            $resultado = ["mensajeEnviado" => true];
+        } else {
+            $resultado = ["mensajeEnviado" => false];
+        }
+
         return(array("correcto" => true, "user" => $id_user, "direccion" => $direccion, "fecha" => $fecha));
     }
 
