@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 14, 2019 at 03:52 PM
+-- Generation Time: May 16, 2019 at 01:57 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -44,11 +44,11 @@ CREATE TABLE `earticulo` (
 --
 
 INSERT INTO `earticulo` (`k`, `iStock`, `sNombre`, `xTipo_k`, `xMarca_k`, `sDescripcion`, `dPrecio`, `sImagen`) VALUES
-(1, 50, 'Anillos de Gimnasio Olímpico', 1, 1, 'Los anillos son gruesos y sólidos y no tienen ninguna astilla o agujeros de ninguna clase, funcionan sus manos por todas partes de ellas y son apenas lisas y sólidas. El material de madera sólida proporciona un excelente agarre sin deslizamiento incluso cuando las palmas comienzan a sudar. Diámetro perfecto de los anillos.\r\n\r\nCaracterísticas\r\n- Diámetro: 235mm\r\n- Diámetro interno: 172mm\r\n- Anillo Espesor: 32mm\r\n- Longitud de la correa: 4.57m\r\n- Ancho de la correa: 38mm\r\n- Peso: 1.82kg\r\n- Capacidad: 365kg.', '32.99', 'anillas1.jpg'),
-(2, 8, 'Anillas de Gimnasia para Entrenamiento', 1, 2, 'Anillos de la gimnasia de madera con correas de la hebilla, aros de ejercicio multifunción ajustable.\r\n\r\nCaracterísticas:\r\n- Material: madera de haya / Abedul\r\n- Correas : Ancho en 28 mm\r\n- Correas de nylon correa: 2.5cm x (450520) cm\r\n- Diámetro del tubo del anillo: 32 mm\r\n- Diámetro exterior: 230 mm\r\n- Carga máxima: hasta 300 kg', '26.99', 'anillas2.jpg'),
-(3, 37, 'Magnesio Líquido. Tubo de 200 ML', 2, 5, 'AGARRE INMEJORABLE.\r\nEl magnesio líquido le proporciona un agarre más firme, especialmente útil para la escalada y otras actividades deportivas que exijan una presa fiable. Olvídese de las manos sudorosas gracias al agarre perfecto que garantiza nuestro magnesio líquido.\r\n\r\nMÁXIMA CALIDAD. \r\nFabricado en Europa, el magnesio líquido de VIA FORTIS ha superado todos los controles de calidad exigidos. Escoja lo mejor: su piel se lo agradecerá.\r\n\r\nSIN MANCHAS. \r\nA diferencia de las bolas de magnesio, el magnesio líquido no deja manchas. Muchos gimnasios no permiten utilizar magnesio en polvo, por lo que los usuarios se decantan por el magnesio líquido, con la confianza de poder utilizarlo en cualquier lugar. El magnesio seco puede arruinar las prendas textiles, algo que no sucede con el magnesio líquido.', '12.90', 'magnesio1.jpg'),
-(4, 26, 'Anillas Olímpicas Gimnasia y Crossfit - Correas Numeradas', 1, 3, 'AGARRE PERFECTO (AUNQUE TE SUDEN LAS MANOS) - Hechas en madera de abedul laminado, nuestras anillas tienen un tacto suave y sedoso proporcionando un agarre como ningún otro material. Anillas que no resbalan te aseguran el máximo rendimiento en los ejercicios más extremos con una confianza absoluta. Olvídate de los plásticos, olvídate del sudor, centrate en tus entrenamientos y wods para mejorar cada día.\r\n\r\nGRAN SENSACIÓN DE SEGURIDAD - Cintas que no se rompen. Lesionarse por culpa de un material defectuoso o de mala calidad es cosa seria. Nuestras anillas usan las cintas más resistentes y anchas del mercado (38mm frente a los habituales 25mm). La capacidad de resistencia de las correas es de 362kg. Estas son las anillas de suspensión más seguras que puedes encontrar y que te permitirán dar el máximo de ti sin tener que preocuparte.', '39.95', 'anillas3.jpg'),
-(5, 5, 'Magnesio de Escalada', 2, 5, 'Material duro MAMMUT\r\nMagnesio Montañismo, alpinismo y trekking Unisex Adulto\r\nLiquid 200 Ml (2290-00611-9001)', '13.36', 'magnesio2.jpg');
+(1, 15, 'Anillos de Gimnasio Olímpico', 1, 1, 'Los anillos son gruesos y sólidos y no tienen ninguna astilla o agujeros de ninguna clase, funcionan sus manos por todas partes de ellas y son apenas lisas y sólidas. El material de madera sólida proporciona un excelente agarre sin deslizamiento incluso cuando las palmas comienzan a sudar. Diámetro perfecto de los anillos.\r\n\r\nCaracterísticas\r\n- Diámetro: 235mm\r\n- Diámetro interno: 172mm\r\n- Anillo Espesor: 32mm\r\n- Longitud de la correa: 4.57m\r\n- Ancho de la correa: 38mm\r\n- Peso: 1.82kg\r\n- Capacidad: 365kg.', '32.99', 'anillas1.jpg'),
+(2, 72, 'Anillas de Gimnasia para Entrenamiento', 1, 2, 'Anillos de la gimnasia de madera con correas de la hebilla, aros de ejercicio multifunción ajustable.\r\n\r\nCaracterísticas:\r\n- Material: madera de haya / Abedul\r\n- Correas : Ancho en 28 mm\r\n- Correas de nylon correa: 2.5cm x (450520) cm\r\n- Diámetro del tubo del anillo: 32 mm\r\n- Diámetro exterior: 230 mm\r\n- Carga máxima: hasta 300 kg', '26.99', 'anillas2.jpg'),
+(3, 23, 'Magnesio Líquido. Tubo de 200 ML', 2, 5, 'AGARRE INMEJORABLE.\r\nEl magnesio líquido le proporciona un agarre más firme, especialmente útil para la escalada y otras actividades deportivas que exijan una presa fiable. Olvídese de las manos sudorosas gracias al agarre perfecto que garantiza nuestro magnesio líquido.\r\n\r\nMÁXIMA CALIDAD. \r\nFabricado en Europa, el magnesio líquido de VIA FORTIS ha superado todos los controles de calidad exigidos. Escoja lo mejor: su piel se lo agradecerá.\r\n\r\nSIN MANCHAS. \r\nA diferencia de las bolas de magnesio, el magnesio líquido no deja manchas. Muchos gimnasios no permiten utilizar magnesio en polvo, por lo que los usuarios se decantan por el magnesio líquido, con la confianza de poder utilizarlo en cualquier lugar. El magnesio seco puede arruinar las prendas textiles, algo que no sucede con el magnesio líquido.', '12.90', 'magnesio1.jpg'),
+(4, 24, 'Anillas Olímpicas Gimnasia y Crossfit - Correas Numeradas', 1, 3, 'AGARRE PERFECTO (AUNQUE TE SUDEN LAS MANOS) - Hechas en madera de abedul laminado, nuestras anillas tienen un tacto suave y sedoso proporcionando un agarre como ningún otro material. Anillas que no resbalan te aseguran el máximo rendimiento en los ejercicios más extremos con una confianza absoluta. Olvídate de los plásticos, olvídate del sudor, centrate en tus entrenamientos y wods para mejorar cada día.\r\n\r\nGRAN SENSACIÓN DE SEGURIDAD - Cintas que no se rompen. Lesionarse por culpa de un material defectuoso o de mala calidad es cosa seria. Nuestras anillas usan las cintas más resistentes y anchas del mercado (38mm frente a los habituales 25mm). La capacidad de resistencia de las correas es de 362kg. Estas son las anillas de suspensión más seguras que puedes encontrar y que te permitirán dar el máximo de ti sin tener que preocuparte.', '39.95', 'anillas3.jpg'),
+(5, 17, 'Magnesio de Escalada', 2, 5, 'Material duro MAMMUT\r\nMagnesio Montañismo, alpinismo y trekking Unisex Adulto\r\nLiquid 200 Ml (2290-00611-9001)', '13.36', 'magnesio2.jpg');
 
 -- --------------------------------------------------------
 
@@ -100,7 +100,28 @@ INSERT INTO `epedido` (`k`, `xUsuario_k`, `dFecha`, `sDireccion`, `bEnviado`) VA
 (6, 2, '2019-05-14', 'c/Simon Hernandez', 1),
 (7, 1, '2019-05-14', 'c/Desarrollo 50, 72B', 1),
 (8, 16, '2019-05-14', 'c/Zhvyrka, n5', 1),
-(9, 1, '2019-05-14', 'c/Desarrollo 50, 72B', 1);
+(9, 1, '2019-05-14', 'c/Desarrollo 50, 72B', 1),
+(10, 1, '2019-05-16', 'c/Desarrollo 50, 72B', 1),
+(11, 1, '2019-05-16', 'c/Desarrollo 50, 72B', 1),
+(12, 1, '2019-05-16', 'c/Desarrollo 50, 72B', 1),
+(13, 1, '2019-05-16', 'c/Desarrollo 50, 72B', 1),
+(14, 1, '2019-05-16', 'c/Desarrollo 50, 72B', 1),
+(15, 1, '2019-05-16', 'c/Desarrollo 50, 72B', 1),
+(16, 23, '2019-05-16', 'c/Clavel, 8', 1),
+(17, 23, '2019-05-16', 'c/Clavel, 8', 1),
+(18, 23, '2019-05-16', 'c/Clavel, 8', 1),
+(19, 23, '2019-05-16', 'c/Clavel, 8', 1),
+(20, 23, '2019-05-16', 'c/Clavel, 8', 1),
+(24, 1, '2019-05-16', 'c/Desarrollo 50, 72B', 1),
+(25, 1, '2019-05-16', 'c/Desarrollo 50, 72B', 1),
+(26, 1, '2019-05-16', 'c/Desarrollo 50, 72B', 1),
+(27, 1, '2019-05-16', 'c/Desarrollo 50, 72B', 1),
+(28, 1, '2019-05-16', 'c/Desarrollo 50, 72B', 1),
+(29, 1, '2019-05-16', 'c/Desarrollo 50, 72B', 1),
+(30, 26, '2019-05-16', 'c/Anonymous', 1),
+(31, 26, '2019-05-16', 'c/Anonymous', 1),
+(32, 2, '2019-05-16', 'c/Simon Hernandez', 1),
+(33, 2, '2019-05-16', 'c/Simon Hernandez', 1);
 
 -- --------------------------------------------------------
 
@@ -153,12 +174,14 @@ CREATE TABLE `eusuario` (
 
 INSERT INTO `eusuario` (`k`, `sUser`, `sNombre`, `sApellido`, `sDni`, `sDireccion`, `sEmail`, `dFechaRegistro`, `bAdministrador`, `sPassword`, `bStatus`) VALUES
 (1, '0xefro', 'Vasyl', 'Havrylyuk', '12345678F', 'c/Desarrollo 50, 72B', '0xefro@gmail.com', '2019-02-28', 1, '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2', 1),
-(2, 'zarzanduil', 'Jorge', 'Belinchon', '87654321K', 'c/Simon Hernandez', 'jorge.belinchon.gonzales.96@gmail.com', '2019-02-28', 0, '84a0ce8e54e7f5bef1050e7d77e76422f9f3161d62376077bd694f1c02c180963ed069517a0234ca344156cdf891356154094a91d8b7a3352b990ce0a42c64a8', 1),
+(2, 'zarzanduil', 'Jorge', 'Belinchon', '87654321K', 'c/Simon Hernandez', 'jorge.belinchon.gonzalez.96@gmail.com', '2019-02-28', 0, '84a0ce8e54e7f5bef1050e7d77e76422f9f3161d62376077bd694f1c02c180963ed069517a0234ca344156cdf891356154094a91d8b7a3352b990ce0a42c64a8', 1),
 (4, 'vasyl_workout', 'Vasyl', 'Havrylyuk', '32145365J', 'c/Jabonera, n54', 'vrylyuk@gmail.com', '2019-03-01', 0, '84a0ce8e54e7f5bef1050e7d77e76422f9f3161d62376077bd694f1c02c180963ed069517a0234ca344156cdf891356154094a91d8b7a3352b990ce0a42c64a8', 1),
 (14, 'fer', 'Fernando', 'Alonso', '99988779K', 'c/Cedaceros, 11', 'fer@gmail.com', '2019-05-08', 0, '84a0ce8e54e7f5bef1050e7d77e76422f9f3161d62376077bd694f1c02c180963ed069517a0234ca344156cdf891356154094a91d8b7a3352b990ce0a42c64a8', 1),
 (15, 'moi', 'Moises', 'Piñeiro', '86675489K', 'c/Cadaceros, 12', 'moi@gmail.com', '2019-05-08', 1, '84a0ce8e54e7f5bef1050e7d77e76422f9f3161d62376077bd694f1c02c180963ed069517a0234ca344156cdf891356154094a91d8b7a3352b990ce0a42c64a8', 1),
 (16, 'viktor', 'Viktor', 'Havrylyuk', 'K9899941G', 'c/Zhvyrka, n5', 'viktor@gmail.com', '2019-05-14', 0, '84a0ce8e54e7f5bef1050e7d77e76422f9f3161d62376077bd694f1c02c180963ed069517a0234ca344156cdf891356154094a91d8b7a3352b990ce0a42c64a8', 1),
-(23, 'sisnet', 'SISnet', 'Netijam', '22222222N', 'c/Clavel, 8', 'vasyl.havrylyuk@sisnet360.com', '2019-05-14', 0, '84a0ce8e54e7f5bef1050e7d77e76422f9f3161d62376077bd694f1c02c180963ed069517a0234ca344156cdf891356154094a91d8b7a3352b990ce0a42c64a8', 1);
+(23, 'sisnet', 'SISnet', 'Netijam', '22222222N', 'c/Clavel, 8', 'vasyl.havrylyuk@sisnet360.com', '2019-05-14', 0, '84a0ce8e54e7f5bef1050e7d77e76422f9f3161d62376077bd694f1c02c180963ed069517a0234ca344156cdf891356154094a91d8b7a3352b990ce0a42c64a8', 1),
+(24, 'pepe', 'Pepito', 'Pérez', '12345678k', 'c/Desarrollo', 'pepe@gmail.com', '2019-05-16', 0, '84a0ce8e54e7f5bef1050e7d77e76422f9f3161d62376077bd694f1c02c180963ed069517a0234ca344156cdf891356154094a91d8b7a3352b990ce0a42c64a8', 1),
+(26, 'anonymous', 'Anonymous', 'Anonymous', '99988877G', 'c/Anonymous', 'anonymous@gmail.com', '2019-05-16', 0, '84a0ce8e54e7f5bef1050e7d77e76422f9f3161d62376077bd694f1c02c180963ed069517a0234ca344156cdf891356154094a91d8b7a3352b990ce0a42c64a8', 1);
 
 -- --------------------------------------------------------
 
@@ -194,7 +217,34 @@ INSERT INTO `rpedidoarticulo` (`k`, `xPedido_k`, `xArticulo_k`, `iCantidad`) VAL
 (15, 8, 4, 24),
 (16, 8, 5, 19),
 (17, 8, 3, 1),
-(18, 9, 2, 1);
+(18, 9, 2, 1),
+(19, 10, 2, 1),
+(20, 11, 2, 2),
+(21, 12, 2, 5),
+(22, 13, 3, 1),
+(23, 14, 5, 1),
+(24, 15, 5, 1),
+(25, 16, 5, 1),
+(26, 16, 1, 13),
+(27, 17, 5, 1),
+(28, 17, 1, 13),
+(29, 18, 5, 1),
+(30, 18, 1, 13),
+(31, 19, 5, 1),
+(32, 19, 1, 13),
+(33, 20, 3, 1),
+(37, 24, 3, 4),
+(38, 24, 2, 1),
+(39, 25, 3, 1),
+(40, 26, 1, 1),
+(41, 26, 5, 1),
+(42, 27, 2, 1),
+(43, 28, 3, 1),
+(44, 29, 5, 1),
+(45, 30, 2, 1),
+(46, 31, 2, 1),
+(47, 32, 2, 5),
+(48, 33, 3, 1);
 
 --
 -- Indexes for dumped tables
@@ -259,7 +309,7 @@ ALTER TABLE `emarca`
 -- AUTO_INCREMENT for table `epedido`
 --
 ALTER TABLE `epedido`
-  MODIFY `k` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `k` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT for table `etipo`
 --
@@ -269,12 +319,12 @@ ALTER TABLE `etipo`
 -- AUTO_INCREMENT for table `eusuario`
 --
 ALTER TABLE `eusuario`
-  MODIFY `k` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `k` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT for table `rpedidoarticulo`
 --
 ALTER TABLE `rpedidoarticulo`
-  MODIFY `k` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `k` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 --
 -- Constraints for dumped tables
 --
