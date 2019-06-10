@@ -10,7 +10,7 @@ $route['translate_uri_dashes'] = FALSE;
 // GLOBAL
 $route['getPedidos'] = 'AdminController/getPedidos';
 $route['resolverPedido'] = 'AdminController/resolverPedido';
-
+$route['loguearDato'] = 'LogController/loguearDato';
 
 
 

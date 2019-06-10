@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2.1
--- http://www.phpmyadmin.net
+-- version 4.7.0
+-- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 27, 2019 at 12:48 PM
--- Server version: 5.7.26-0ubuntu0.16.04.1
--- PHP Version: 7.0.33-0ubuntu0.16.04.4
+-- Generation Time: Jun 10, 2019 at 02:50 PM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -42,17 +44,65 @@ CREATE TABLE `earticulo` (
 --
 
 INSERT INTO `earticulo` (`k`, `iStock`, `sNombre`, `xTipo_k`, `xMarca_k`, `sDescripcion`, `dPrecio`, `sImagen`) VALUES
-(1, 14, 'Anillos de Gimnasio Olímpico', 1, 1, 'Los anillos son gruesos y sólidos y no tienen ninguna astilla o agujeros de ninguna clase, funcionan sus manos por todas partes de ellas y son apenas lisas y sólidas. El material de madera sólida proporciona un excelente agarre sin deslizamiento incluso cuando las palmas comienzan a sudar. Diámetro perfecto de los anillos.\r\n\r\nCaracterísticas\r\n- Diámetro: 235mm\r\n- Diámetro interno: 172mm\r\n- Anillo Espesor: 32mm\r\n- Longitud de la correa: 4.57m\r\n- Ancho de la correa: 38mm\r\n- Peso: 1.82kg\r\n- Capacidad: 365kg.', '32.99', 'anillas1.jpg'),
-(2, 28, 'Anillas de Gimnasia para Entrenamiento', 1, 2, 'Anillos de la gimnasia de madera con correas de la hebilla, aros de ejercicio multifunción ajustable.\r\n\r\nCaracterísticas:\r\n- Material: madera de haya / Abedul\r\n- Correas : Ancho en 28 mm\r\n- Correas de nylon correa: 2.5cm x (450520) cm\r\n- Diámetro del tubo del anillo: 32 mm\r\n- Diámetro exterior: 230 mm\r\n- Carga máxima: hasta 300 kg', '26.99', 'anillas2.jpg'),
-(3, 78, 'Magnesio Líquido. Tubo de 200 ML', 2, 5, 'AGARRE INMEJORABLE.\r\nEl magnesio líquido le proporciona un agarre más firme, especialmente útil para la escalada y otras actividades deportivas que exijan una presa fiable. Olvídese de las manos sudorosas gracias al agarre perfecto que garantiza nuestro magnesio líquido.\r\n\r\nMÁXIMA CALIDAD. \r\nFabricado en Europa, el magnesio líquido de VIA FORTIS ha superado todos los controles de calidad exigidos. Escoja lo mejor: su piel se lo agradecerá.\r\n\r\nSIN MANCHAS. \r\nA diferencia de las bolas de magnesio, el magnesio líquido no deja manchas. Muchos gimnasios no permiten utilizar magnesio en polvo, por lo que los usuarios se decantan por el magnesio líquido, con la confianza de poder utilizarlo en cualquier lugar. El magnesio seco puede arruinar las prendas textiles, algo que no sucede con el magnesio líquido.', '12.90', 'magnesio1.jpg'),
+(1, 28, 'Anillos de Gimnasio Olímpico', 1, 1, 'Los anillos son gruesos y sólidos y no tienen ninguna astilla o agujeros de ninguna clase, funcionan sus manos por todas partes de ellas y son apenas lisas y sólidas. El material de madera sólida proporciona un excelente agarre sin deslizamiento incluso cuando las palmas comienzan a sudar. Diámetro perfecto de los anillos.\r\n\r\nCaracterísticas\r\n- Diámetro: 235mm\r\n- Diámetro interno: 172mm\r\n- Anillo Espesor: 32mm\r\n- Longitud de la correa: 4.57m\r\n- Ancho de la correa: 38mm\r\n- Peso: 1.82kg\r\n- Capacidad: 365kg.', '32.99', 'anillas1.jpg'),
+(2, 27, 'Anillas de Gimnasia para Entrenamiento', 1, 2, 'Anillos de la gimnasia de madera con correas de la hebilla, aros de ejercicio multifunción ajustable.\r\n\r\nCaracterísticas:\r\n- Material: madera de haya / Abedul\r\n- Correas : Ancho en 28 mm\r\n- Correas de nylon correa: 2.5cm x (450520) cm\r\n- Diámetro del tubo del anillo: 32 mm\r\n- Diámetro exterior: 230 mm\r\n- Carga máxima: hasta 300 kg', '26.99', 'anillas2.jpg'),
+(3, 76, 'Magnesio Líquido. Tubo de 200 ML', 2, 5, 'AGARRE INMEJORABLE.\r\nEl magnesio líquido le proporciona un agarre más firme, especialmente útil para la escalada y otras actividades deportivas que exijan una presa fiable. Olvídese de las manos sudorosas gracias al agarre perfecto que garantiza nuestro magnesio líquido.\r\n\r\nMÁXIMA CALIDAD. \r\nFabricado en Europa, el magnesio líquido de VIA FORTIS ha superado todos los controles de calidad exigidos. Escoja lo mejor: su piel se lo agradecerá.\r\n\r\nSIN MANCHAS. \r\nA diferencia de las bolas de magnesio, el magnesio líquido no deja manchas. Muchos gimnasios no permiten utilizar magnesio en polvo, por lo que los usuarios se decantan por el magnesio líquido, con la confianza de poder utilizarlo en cualquier lugar. El magnesio seco puede arruinar las prendas textiles, algo que no sucede con el magnesio líquido.', '12.90', 'magnesio1.jpg'),
 (4, 30, 'Anillas Olímpicas Gimnasia y Crossfit - Correas Numeradas', 1, 3, 'AGARRE PERFECTO (AUNQUE TE SUDEN LAS MANOS) - Hechas en madera de abedul laminado, nuestras anillas tienen un tacto suave y sedoso proporcionando un agarre como ningún otro material. Anillas que no resbalan te aseguran el máximo rendimiento en los ejercicios más extremos con una confianza absoluta. Olvídate de los plásticos, olvídate del sudor, centrate en tus entrenamientos y wods para mejorar cada día.\r\n\r\nGRAN SENSACIÓN DE SEGURIDAD - Cintas que no se rompen. Lesionarse por culpa de un material defectuoso o de mala calidad es cosa seria. Nuestras anillas usan las cintas más resistentes y anchas del mercado (38mm frente a los habituales 25mm). La capacidad de resistencia de las correas es de 362kg. Estas son las anillas de suspensión más seguras que puedes encontrar y que te permitirán dar el máximo de ti sin tener que preocuparte.', '39.95', 'anillas3.jpg'),
 (5, 40, 'Magnesio de Escalada', 2, 5, 'Material duro MAMMUT\r\nMagnesio Montañismo, alpinismo y trekking Unisex Adulto\r\nLiquid 200 Ml (2290-00611-9001)', '13.36', 'magnesio2.jpg'),
 (6, 29, 'Predator Protein 2Kg', 6, 11, 'Beneficios y Funciones:\r\n\r\n    Contiene 100 % proteína concentrado de alta calidad (W.P.C.).\r\n    Promueve el crecimiento muscular.\r\n    Mejora la recuperación muscular.\r\n    Inhibe el catabolismo muscular.\r\n    Contiene encimas digestivas DIGEZYME®.\r\n    Totalmente libre de aspartamo.\r\n\r\nPresentación: 2kg.', '50.90', '1558073820-amix-predator-2-kg.jpg'),
-(7, 33, 'Set de 3 Bandas de Resistencia de Rubberbanditz', 18, 9, 'El complemento perfecto\r\nAyudando a los levantadores de potencia a romper los récords y hacer avances monumentales en el rendimiento durante más de 10 años, las bandas de potencia han sido una herramienta esencial para muchos Goliats de hoy en día para ayudar a superar las mesetas de entrenamiento y probar su fuerza definitiva.\r\n\r\n¿Cómo funcionan las bandas de levantamiento de potencia?\r\nEl levantamiento de fuerza y ​​olímpico con bandas ofrece una resistencia ascendente en todo su rango de movimiento, proporcionando una relación armoniosa con sus músculos. A medida que los músculos se contraen y ejercen fuerza, las bandas se estiran más y la resistencia aumenta. En su punto más débil, generalmente en la posición inicial, las bandas ofrecen una resistencia mínima para ayudarlo a superar el &quot;punto de adherencia&quot; (por ejemplo, el punto más bajo de una sentadilla o press de banca). Luego, a medida que se extiende a lo largo de su repetición, la tensión de la banda de levantamiento de pesas aumenta gradualmente, lo que permite una eficiencia de fortalecimiento muscular óptima que no se puede lograr simplemente por la fuerza de la gravedad.\r\n\r\n¿Qué banda es la adecuada para mí?\r\n* (Nombre): (Espesor) - (Resistencia aproximada)\r\n* Banda de luz: 1/4 &quot;- 5 a 15 lbs (2-7kg)\r\n* Banda media: 1/2 &quot;- 20 a 35 lbs (9-16 kg)\r\n* Banda pesada: 3/4 &quot;- 30 a 50 lb (14-23 kg)\r\n* Banda robusta: 1 1/8 &quot;- 40 a 80 lbs (18-36kg)\r\n* Banda de potencia: 1 3/4 &quot;- 50 a 120 lbs (23-54kg)\r\n* Banda fuerte: 2 1/2 &quot;- 60 a 150 lbs (27-68kg)\r\n* Banda de monstruos: 4 &quot;- 80 a 200 lbs (36-91kg)', '88.05', '1558074190-6105CTdFeFL._SL1210_.jpg'),
+(7, 32, 'Set de 3 Bandas de Resistencia de Rubberbanditz', 18, 9, 'El complemento perfecto\r\nAyudando a los levantadores de potencia a romper los récords y hacer avances monumentales en el rendimiento durante más de 10 años, las bandas de potencia han sido una herramienta esencial para muchos Goliats de hoy en día para ayudar a superar las mesetas de entrenamiento y probar su fuerza definitiva.\r\n\r\n¿Cómo funcionan las bandas de levantamiento de potencia?\r\nEl levantamiento de fuerza y ​​olímpico con bandas ofrece una resistencia ascendente en todo su rango de movimiento, proporcionando una relación armoniosa con sus músculos. A medida que los músculos se contraen y ejercen fuerza, las bandas se estiran más y la resistencia aumenta. En su punto más débil, generalmente en la posición inicial, las bandas ofrecen una resistencia mínima para ayudarlo a superar el &quot;punto de adherencia&quot; (por ejemplo, el punto más bajo de una sentadilla o press de banca). Luego, a medida que se extiende a lo largo de su repetición, la tensión de la banda de levantamiento de pesas aumenta gradualmente, lo que permite una eficiencia de fortalecimiento muscular óptima que no se puede lograr simplemente por la fuerza de la gravedad.\r\n\r\n¿Qué banda es la adecuada para mí?\r\n* (Nombre): (Espesor) - (Resistencia aproximada)\r\n* Banda de luz: 1/4 &quot;- 5 a 15 lbs (2-7kg)\r\n* Banda media: 1/2 &quot;- 20 a 35 lbs (9-16 kg)\r\n* Banda pesada: 3/4 &quot;- 30 a 50 lb (14-23 kg)\r\n* Banda robusta: 1 1/8 &quot;- 40 a 80 lbs (18-36kg)\r\n* Banda de potencia: 1 3/4 &quot;- 50 a 120 lbs (23-54kg)\r\n* Banda fuerte: 2 1/2 &quot;- 60 a 150 lbs (27-68kg)\r\n* Banda de monstruos: 4 &quot;- 80 a 200 lbs (36-91kg)', '88.05', '1558074190-6105CTdFeFL._SL1210_.jpg'),
 (8, 16, 'PURE 100% WHEY 2,27 Kg', 6, 13, 'Pure 100% Whey. Características principales:\r\n\r\n    119 kcal por dosis*.\r\n    Proteínas 100% a partir del suero de leche.\r\n    Alto contenido en proteínas.\r\n    79.3 % proteínas.\r\n    Hasta 10.37 gramos de aminoácidos esenciales.\r\n    Hasta 4.33 gramos de BCAA por dosis.\r\n    6.8 % carbohidratos.\r\n    5.9 % grasas.\r\n    Sin azúcares añadidos.\r\n    Bajo contenido en azúcares.\r\n    Calidad y pureza garantizada.\r\n    Apto para vegetarianos que consumen lácteos.\r\n    Sabores increíbles.\r\n    Enriquecido con enzimas digestivas.\r\n    Envase de 2.27 kg (75 dosis).', '42.99', '1558074406-pure-nutrition-pure-100-whey-2270g.jpg'),
 (9, 50, 'Paralelas para Dips y Handstands', 3, 14, 'Cada barra es de 24 &quot;de ancho, 31&quot; de alto y se puede ajustar hasta 35 &quot;, por lo que puede configurarla en paralelo o escalonada para una mayor variedad de ejercicios\r\n\r\nLos tubos resistentes de hierro con recubrimiento en polvo pueden soportar hasta 400 libras, para que pueda entrenar de manera segura el pecho, tríceps, hombros y centro', '52.99', '1558074926-71LOvXwZACL._SL1500_.jpg'),
-(10, 60, 'Anclle Wooden PBars', 3, 15, 'Para el ejercicio físico, el fulcro triangular es más estable; el estante corto reduce la fuerza, la balanza no vibra y los dos lados son fijos y firmes.\r\n\r\nLa madera de carbón es sólida y duradera, resistente a las polillas y resistente, absorbe el sudor y es antideslizante con efecto amortiguador.\r\n\r\nFácil de instalar: se puede montar y desmontar sin necesidad de herramientas en pocos segundos. Se adapta incluso en un paquete de bolsas pequeñas y no pesa mucho.\r\n\r\nLas flexiones son la forma más sencilla y efectiva de ejercitar los músculos del pecho. Equipo de fitness perfecto, fácil de llevar, diseño simple y práctico.\r\n\r\nEl estante puede soportar una carga pesada, el producto 25CM puede soportar aproximadamente 300-400KG, el producto 50CM puede soportar aproximadamente 200-300KG', '27.78', '1558075302-61OgIPr4nML._SL1001_.jpg'),
+(10, 59, 'Anclle Wooden PBars', 3, 15, 'Para el ejercicio físico, el fulcro triangular es más estable; el estante corto reduce la fuerza, la balanza no vibra y los dos lados son fijos y firmes.\r\n\r\nLa madera de carbón es sólida y duradera, resistente a las polillas y resistente, absorbe el sudor y es antideslizante con efecto amortiguador.\r\n\r\nFácil de instalar: se puede montar y desmontar sin necesidad de herramientas en pocos segundos. Se adapta incluso en un paquete de bolsas pequeñas y no pesa mucho.\r\n\r\nLas flexiones son la forma más sencilla y efectiva de ejercitar los músculos del pecho. Equipo de fitness perfecto, fácil de llevar, diseño simple y práctico.\r\n\r\nEl estante puede soportar una carga pesada, el producto 25CM puede soportar aproximadamente 300-400KG, el producto 50CM puede soportar aproximadamente 200-300KG', '27.78', '1558075302-61OgIPr4nML._SL1001_.jpg'),
 (11, 30, 'Rodillo para abdominales hipopresivos, rueda de aerobic, AB roller', 5, 16, 'Rueda de ejercicio con asideros de PVC y varilla de acero. Ligera y portátil, con un peso de 522 gramos, ayuda a la escultura del cuerpo. Su uso ayuda a reafirmar, tensar y aplanar el abdomen, además de que también ayudará a fortalecer los brazo, los hombros y los músculos de la espalda.', '12.90', '1558960764-81UFnDNic5L._SL1500_.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `elog`
+--
+
+CREATE TABLE `elog` (
+  `k` int(11) NOT NULL,
+  `sTipo` text COLLATE latin1_spanish_ci NOT NULL,
+  `sDescripcion` text COLLATE latin1_spanish_ci NOT NULL,
+  `sTimestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+--
+-- Dumping data for table `elog`
+--
+
+INSERT INTO `elog` (`k`, `sTipo`, `sDescripcion`, `sTimestamp`) VALUES
+(6, 'info', 'zarzanduil se ha logueado', '2019-06-10 10:21:23'),
+(7, 'info', 'fer se ha logueado', '2019-06-10 10:21:28'),
+(8, 'info', '0xefro se ha logueado', '2019-06-10 10:21:34'),
+(10, 'info', 'vasyl.havrylyuk se ha registrado', '2019-06-10 11:03:30'),
+(11, 'info', 'vasyl.havrylyuk se ha logueado', '2019-06-10 11:04:56'),
+(12, 'info', 'undefined ha actualizado su cuenta', '2019-06-10 11:24:45'),
+(13, 'info', 'vasyl.havrylyuky ha actualizado su cuenta', '2019-06-10 11:26:03'),
+(14, 'info', 'vasyl.havrylyuk ha actualizado su cuenta', '2019-06-10 11:27:17'),
+(15, 'info', 'vasyl.havrylyuk ha actualizado su cuenta', '2019-06-10 11:27:39'),
+(16, 'info', 'undefined ha realizado el pedido #42', '2019-06-10 11:43:26'),
+(17, 'info', '0xefro se ha logueado', '2019-06-10 11:44:59'),
+(18, 'info', '0xefro ha realizado el pedido #43', '2019-06-10 11:52:05'),
+(20, 'info', ' se ha logueado', '2019-06-10 12:04:32'),
+(21, 'info', ' se ha logueado', '2019-06-10 12:06:57'),
+(22, 'info', ' se ha logueado', '2019-06-10 12:07:11'),
+(23, 'info', 'se ha logueado', '2019-06-10 12:27:03'),
+(24, 'info', 'Moises se ha logueado', '2019-06-10 12:29:01'),
+(25, 'info', 'Vasyl se ha logueado', '2019-06-10 12:31:11'),
+(26, 'info', 'Vasyl se ha logueado', '2019-06-10 12:32:40'),
+(27, 'info', 'Vasyl ha insertado un nuevo artículo', '2019-06-10 12:37:42'),
+(28, 'info', 'Moises se ha logueado', '2019-06-10 12:38:12'),
+(29, 'info', 'Moises eliminó una categoria', '2019-06-10 12:40:18'),
+(30, 'info', 'Moises actualizó una categoria', '2019-06-10 12:40:49'),
+(31, 'info', ' ha cerrado la sesión', '2019-06-10 12:41:40'),
+(32, 'info', 'Moises se ha logueado', '2019-06-10 12:42:08'),
+(33, 'info', 'Moises ha cerrado la sesión', '2019-06-10 12:42:13'),
+(34, 'info', 'Vasyl se ha logueado', '2019-06-10 12:42:36'),
+(35, 'info', '0xefro eliminó una categoria', '2019-06-10 12:43:06'),
+(36, 'info', '0xefro eliminó un usuario', '2019-06-10 12:48:22');
 
 -- --------------------------------------------------------
 
@@ -111,10 +161,14 @@ INSERT INTO `epedido` (`k`, `xUsuario_k`, `dFecha`, `sDireccion`, `bEnviado`) VA
 (29, 1, '2019-05-16', 'c/Desarrollo 50, 72B', 1),
 (34, 34, '2019-05-16', 'c/ JAJA', 1),
 (35, 1, '2019-05-16', 'c/Desarrollo 50, 72B', 1),
-(36, 1, '2019-05-17', 'c/Desarrollo 50, 72B', 0),
-(37, 15, '2019-05-27', 'c/Cadaceros, 12', 0),
-(38, 38, '2019-05-27', 'Calle la Moraleja', 0),
-(39, 38, '2019-05-27', 'Calle la Moraleja', 0);
+(36, 1, '2019-05-17', 'c/Desarrollo 50, 72B', 1),
+(37, 15, '2019-05-27', 'c/Cadaceros, 12', 1),
+(38, 38, '2019-05-27', 'Calle la Moraleja', 1),
+(39, 38, '2019-05-27', 'Calle la Moraleja', 1),
+(40, 38, '2019-06-10', 'Calle la Moraleja', 1),
+(41, 38, '2019-06-10', 'Calle la Moraleja', 1),
+(42, 42, '2019-06-10', 'c/Av Constitucion', 0),
+(43, 1, '2019-06-10', 'c/Desarrollo 50, 72B', 0);
 
 -- --------------------------------------------------------
 
@@ -171,11 +225,12 @@ INSERT INTO `eusuario` (`k`, `sUser`, `sNombre`, `sApellido`, `sDni`, `sDireccio
 (15, 'moi', 'Moises', 'Piñeiro', '86675489K', 'c/Cadaceros, 12', 'moi@gmail.com', '2019-05-08', 1, '84a0ce8e54e7f5bef1050e7d77e76422f9f3161d62376077bd694f1c02c180963ed069517a0234ca344156cdf891356154094a91d8b7a3352b990ce0a42c64a8', 1),
 (16, 'viktor', 'Viktor', 'Havrylyuk', 'K9899941G', 'c/Zhvyrka, n5', 'viktor@gmail.com', '2019-05-14', 0, '84a0ce8e54e7f5bef1050e7d77e76422f9f3161d62376077bd694f1c02c180963ed069517a0234ca344156cdf891356154094a91d8b7a3352b990ce0a42c64a8', 1),
 (24, 'pepe', 'Pepito', 'Pérez', '12345678k', 'c/Desarrollo', 'pepe@gmail.com', '2019-05-16', 0, '84a0ce8e54e7f5bef1050e7d77e76422f9f3161d62376077bd694f1c02c180963ed069517a0234ca344156cdf891356154094a91d8b7a3352b990ce0a42c64a8', 1),
-(34, 'sisnet', 'SISnet', 'Netijam', '11221123B', 'c/ JAJA', 'vasyl.havrylyuk@sisnet360.com', '2019-05-16', 0, '84a0ce8e54e7f5bef1050e7d77e76422f9f3161d62376077bd694f1c02c180963ed069517a0234ca344156cdf891356154094a91d8b7a3352b990ce0a42c64a8', 1),
-(35, 'Vladitor31', 'Vlad', 'Tomus', 'Y0430746Q', 'La paz', 'Vladitor31@gmail.com', '2019-05-16', 0, '8cf4ccfa5c95c7a35f957a360bad68925d88dc388687181ec9a95462cb3ab09c8c2dccb413c66e20953ae995889c6e61ca4c4a873f0dda8a3e991e00bf3a0893', 1),
-(37, 'Vladitor311', 'Vlad', 'Tomus', 'Y0440746Q', 'La paz', 'Vlad_tomus31@yahoo.com', '2019-05-16', 0, '8cf4ccfa5c95c7a35f957a360bad68925d88dc388687181ec9a95462cb3ab09c8c2dccb413c66e20953ae995889c6e61ca4c4a873f0dda8a3e991e00bf3a0893', 0),
+(34, 'sisnet', 'SISnet', 'Netijam', '11221123B', 'c/ JAJA', '0xefro@gmail.com', '2019-05-16', 0, '84a0ce8e54e7f5bef1050e7d77e76422f9f3161d62376077bd694f1c02c180963ed069517a0234ca344156cdf891356154094a91d8b7a3352b990ce0a42c64a8', 1),
+(37, 'Vladitor311', 'Vlad', 'Tomus', 'Y0440746Q', 'La paz', 'Vlad_tomus31@yahoo.com', '2019-05-16', 0, '8cf4ccfa5c95c7a35f957a360bad68925d88dc388687181ec9a95462cb3ab09c8c2dccb413c66e20953ae995889c6e61ca4c4a873f0dda8a3e991e00bf3a0893', 1),
 (38, 'zarzanduil', 'Jorge', 'Belinchón', '66666666H', 'Calle la Moraleja', 'zarzanduil.96@gmail.com', '2019-05-27', 0, '84a0ce8e54e7f5bef1050e7d77e76422f9f3161d62376077bd694f1c02c180963ed069517a0234ca344156cdf891356154094a91d8b7a3352b990ce0a42c64a8', 1),
-(40, '10minutemail', '10', 'minutemail', '89898988P', 'c/10minutemail', 'x514940@nwytg.net', '2019-05-27', 0, '84a0ce8e54e7f5bef1050e7d77e76422f9f3161d62376077bd694f1c02c180963ed069517a0234ca344156cdf891356154094a91d8b7a3352b990ce0a42c64a8', 1);
+(40, '10minutemail', '10', 'minutemail', '89898988P', 'c/10minutemail', 'x514940@nwytg.net', '2019-05-27', 0, '84a0ce8e54e7f5bef1050e7d77e76422f9f3161d62376077bd694f1c02c180963ed069517a0234ca344156cdf891356154094a91d8b7a3352b990ce0a42c64a8', 1),
+(41, '0xefro2', 'Vasyl', 'Havrylyuk', '12345678N', 'c/Carrera, 4', '0xefro@gmail.com', '2019-06-10', 0, '84a0ce8e54e7f5bef1050e7d77e76422f9f3161d62376077bd694f1c02c180963ed069517a0234ca344156cdf891356154094a91d8b7a3352b990ce0a42c64a8', 0),
+(42, 'vasyl.havrylyuk', 'Vasyl', 'Lomachenko', '12345578p', 'c/Av Constitucion', 'vasyl.havrylyuk@educa.madrid.org', '2019-06-10', 0, '84a0ce8e54e7f5bef1050e7d77e76422f9f3161d62376077bd694f1c02c180963ed069517a0234ca344156cdf891356154094a91d8b7a3352b990ce0a42c64a8', 1);
 
 -- --------------------------------------------------------
 
@@ -220,7 +275,13 @@ INSERT INTO `rpedidoarticulo` (`k`, `xPedido_k`, `xArticulo_k`, `iCantidad`) VAL
 (58, 39, 4, 24),
 (59, 39, 5, 15),
 (60, 39, 9, 70),
-(61, 39, 10, 34);
+(61, 39, 10, 34),
+(62, 40, 10, 1),
+(63, 40, 7, 1),
+(64, 41, 3, 1),
+(65, 42, 2, 1),
+(66, 42, 1, 1),
+(67, 43, 3, 1);
 
 --
 -- Indexes for dumped tables
@@ -233,6 +294,12 @@ ALTER TABLE `earticulo`
   ADD PRIMARY KEY (`k`),
   ADD KEY `Categoria_idx` (`xTipo_k`),
   ADD KEY `Marca_idx` (`xMarca_k`);
+
+--
+-- Indexes for table `elog`
+--
+ALTER TABLE `elog`
+  ADD PRIMARY KEY (`k`);
 
 --
 -- Indexes for table `emarca`
@@ -277,6 +344,11 @@ ALTER TABLE `rpedidoarticulo`
 ALTER TABLE `earticulo`
   MODIFY `k` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
+-- AUTO_INCREMENT for table `elog`
+--
+ALTER TABLE `elog`
+  MODIFY `k` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+--
 -- AUTO_INCREMENT for table `emarca`
 --
 ALTER TABLE `emarca`
@@ -285,22 +357,22 @@ ALTER TABLE `emarca`
 -- AUTO_INCREMENT for table `epedido`
 --
 ALTER TABLE `epedido`
-  MODIFY `k` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `k` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 --
 -- AUTO_INCREMENT for table `etipo`
 --
 ALTER TABLE `etipo`
-  MODIFY `k` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `k` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `eusuario`
 --
 ALTER TABLE `eusuario`
-  MODIFY `k` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `k` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 --
 -- AUTO_INCREMENT for table `rpedidoarticulo`
 --
 ALTER TABLE `rpedidoarticulo`
-  MODIFY `k` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `k` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 --
 -- Constraints for dumped tables
 --
@@ -324,6 +396,7 @@ ALTER TABLE `epedido`
 ALTER TABLE `rpedidoarticulo`
   ADD CONSTRAINT `Articulo` FOREIGN KEY (`xArticulo_k`) REFERENCES `earticulo` (`k`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `Pedido` FOREIGN KEY (`xPedido_k`) REFERENCES `epedido` (`k`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

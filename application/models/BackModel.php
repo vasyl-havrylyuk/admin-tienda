@@ -77,7 +77,7 @@ class BackModel extends CI_Model {
     public function getNombreAdmin($id) {
         $sql = "SELECT * FROM eUsuario WHERE k = '$id'";
         $query = $this->con->query($sql);
-        $rs = $query->row('sNombre');
+        $rs = $query->row('sUser');
         return $rs;
     }
 

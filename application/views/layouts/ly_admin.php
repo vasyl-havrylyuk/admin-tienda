@@ -7,6 +7,7 @@
     }
 
     $nombreAdmin = $this->BackModel->getNombreAdmin($_SESSION['id']);
+
 ?>
     
 <!DOCTYPE html>

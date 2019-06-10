@@ -85,7 +85,7 @@ class FrontalModel extends CI_Model {
         $usuario = sanear($data['usuario']);
         $password = hash('sha512', sanear($data['password']));
 
-        $sql = "SELECT U.k as k, U.sNombre as nombre, U.sDireccion as direccion, U.bAdministrador as bAdmin, U.bStatus as bStatus
+        $sql = "SELECT U.k as k, U.sUser as user, U.sNombre as nombre, U.sDireccion as direccion, U.bAdministrador as bAdmin, U.bStatus as bStatus
                 FROM eUsuario as U WHERE sUser = '$usuario' AND sPassword = '$password'";
         
         $query = $this->con->query($sql);
@@ -113,7 +113,11 @@ class FrontalModel extends CI_Model {
                 $_SESSION['autenticado'] = true;
             }
 
+
+            $resultado['usuario'] = $usuario[0]['user'];
         }
+
+
 
         return $resultado;
 
@@ -195,12 +199,14 @@ class FrontalModel extends CI_Model {
                 $resultado["registrado"] = true;
             } else {
                 $resultado["registrado"] = false;
-            }    
+            }
+
+            $resultado['usuario'] = $usuario;
         } else {
             $resultado['registrado'] = false;
             if ($usuarioExiste) $resultado['usuario'] = "El usuario introducido ya está registrado";
-            if ($dniExiste) $resultado['dni'] = "El dni introducido ya está registrado";;
-            if ($emailExiste) $resultado['email'] = "El email introducido ya está registrado";;
+            if ($dniExiste) $resultado['dni'] = "El dni introducido ya está registrado";
+            if ($emailExiste) $resultado['email'] = "El email introducido ya está registrado";
         }
         
         
@@ -229,6 +235,7 @@ class FrontalModel extends CI_Model {
         // Consultamos primero la dirección del usuario y su email donde enviaremos la confirmación del pedido
         $sql = "SELECT * FROM eUsuario WHERE k = '$id_user'";
         $query = $this->con->query($sql);
+        $usuario = $query->row('sUser');
         $direccion = $query->row('sDireccion');
         $email = $query->row('sEmail');
 
@@ -294,7 +301,8 @@ class FrontalModel extends CI_Model {
             $resultado = ["mensajeEnviado" => false];
         }
 
-        return(array("correcto" => true, "user" => $id_user, "direccion" => $direccion, "fecha" => $fecha));
+
+        return(array("pedido" => $ultimoPedido, "usuario" => $usuario, "correcto" => true, "user" => $id_user, "direccion" => $direccion, "fecha" => $fecha));
     }
 
 
@@ -303,6 +311,8 @@ class FrontalModel extends CI_Model {
 
     
     public function actualizarCuenta($data) {
+        $resultado["usuario"] = sanear($data['usuario']);
+
         $data = array(
             'sUser'      => sanear($data['usuario']),
             'sNombre'    => sanear($data['nombre']),
@@ -312,9 +322,11 @@ class FrontalModel extends CI_Model {
             'sEmail'     => sanear($data['email']),
         );
 
-        $actualizada = $this->con->update('eUsuario', $data, array('k' => $_SESSION['id'])) or die();
+        $this->con->update('eUsuario', $data, array('k' => $_SESSION['id'])) or die();
 
-        return ["cuentaActualizada" => true];
+        $resultado["cuentaActualizada"] = true;
+        
+        return $resultado;
     }
     
 

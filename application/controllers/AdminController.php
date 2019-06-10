@@ -8,6 +8,10 @@ class AdminController extends CI_Controller {
         parent::__construct();
     }
 
+    public function loguearDato($level, $descripcion) {
+        $nombreAdmin = $this->BackModel->getNombreAdmin($_SESSION['id']);
+        $this->LogModel->loguearDato([$level, $nombreAdmin.' '.$descripcion]);
+    }
 
 
 
@@ -98,6 +102,8 @@ class AdminController extends CI_Controller {
 		if ($auth['autenticado']) {
             $_SESSION['adminAutenticado'] = true;
             $_SESSION['id'] = $auth['id'];
+            $this->loguearDato('info', 'se ha logueado');
+
 			header('Location: '.base_url());
 		} else {
 			header('Location: '.base_url().'login/error');
@@ -105,6 +111,8 @@ class AdminController extends CI_Controller {
     }
 
     public function logout() {
+        $this->loguearDato('info', 'ha cerrado la sesión');
+
         session_unset();
         
         if (isset($_COOKIE[session_name()])) setcookie(session_name(), "", time(), "/");
@@ -112,6 +120,7 @@ class AdminController extends CI_Controller {
         session_destroy();
 
         header('Location: '.base_url().'login');
+        
     }
 
 
@@ -160,7 +169,7 @@ class AdminController extends CI_Controller {
 
     public function insertarArticulo() {
         $this->BackModel->insertarArticulo($_POST, $_FILES);
-        
+        $this->loguearDato('info', 'insertó un nuevo artículo');
         header('Location: '.base_url().'articulos');
     }
 
@@ -193,7 +202,7 @@ class AdminController extends CI_Controller {
         }
 
         $this->BackModel->actualizarArticulo($_POST);
-        
+        $this->loguearDato('info', 'actualizó un artículo');
         header('Location: '.base_url().'articulos');
     }
     
@@ -202,7 +211,7 @@ class AdminController extends CI_Controller {
         $id = $this->uri->segment(3);
 
         $this->BackModel->eliminarArticulo($id);
-
+        $this->loguearDato('info', 'eliminó un artículo');
         header('Location: '.base_url().'articulos');
     }
 
@@ -249,7 +258,7 @@ class AdminController extends CI_Controller {
     // INSERTAMOS CATEGORIA
     public function insertarCategoria() {
         $this->BackModel->insertarCategoria($_POST);
-
+        $this->loguearDato('info', 'insertó una nueva categoria');
         header('Location: '.base_url().'categorias');
     }
 
@@ -276,7 +285,7 @@ class AdminController extends CI_Controller {
     // ACTUALIZAMOS CATEGORIA
     public function actualizarCategoria() {
         $this->BackModel->actualizarCategoria($_POST);
-        
+        $this->loguearDato('info', 'actualizó una categoria');
         header('Location: '.base_url().'categorias');
     }
 
@@ -285,7 +294,7 @@ class AdminController extends CI_Controller {
         $id = $this->uri->segment(3);
 
         $this->BackModel->eliminarCategoria($id);
-
+        $this->loguearDato('info', 'eliminó una categoria');
         header('Location: '.base_url().'categorias');
     }
 
@@ -330,7 +339,7 @@ class AdminController extends CI_Controller {
     // INSERTAMOS MARCA
     public function insertarMarca() {
         $this->BackModel->insertarMarca($_POST);
-
+        $this->loguearDato('info', 'insertó una nueva marca');
         header('Location: '.base_url().'marcas');
     }
 
@@ -357,7 +366,7 @@ class AdminController extends CI_Controller {
     // ACTUALIZAMOS MARCA
     public function actualizarMarca() {
         $this->BackModel->actualizarMarca($_POST);
-        
+        $this->loguearDato('info', 'actualizó una marca');
         header('Location: '.base_url().'marcas');
     }
 
@@ -366,7 +375,7 @@ class AdminController extends CI_Controller {
         $id = $this->uri->segment(3);
 
         $this->BackModel->eliminarMarca($id);
-
+        $this->loguearDato('info', 'eliminó una marca');
         header('Location: '.base_url().'marcas');
     }
 
@@ -410,7 +419,7 @@ class AdminController extends CI_Controller {
     // INSERTAMOS USUARIO
     public function insertarUsuario() {
         $this->BackModel->insertarUsuario($_POST);
-
+        $this->loguearDato('info', 'insertó un nuevo usuario');
         header('Location: '.base_url().'usuarios');
     }
 
@@ -437,6 +446,7 @@ class AdminController extends CI_Controller {
     // ACTUALIZAMOS USUARIO
     public function actualizarUsuario() {
         $this->BackModel->actualizarUsuario($_POST);
+        $this->loguearDato('info', 'actualizó un usuario');
         header('Location: '.base_url().'usuarios');
     }
     
@@ -445,7 +455,7 @@ class AdminController extends CI_Controller {
         $id = $this->uri->segment(3);
 
         $this->BackModel->eliminarUsuario($id);
-
+        $this->loguearDato('info', 'eliminó un usuario');
         header('Location: '.base_url().'usuarios');
     }
 
